@@ -1,10 +1,11 @@
 import React from 'react'
 
-function Props({title,text}) {
+function Props({title,text,icon}) {
   return (
  <main>
         <div className='flex flex-col  items-center justify-center w-[27vw] h-[53vh]'>
-      <div className='h-[86px] w-[86px] bg-[#BDF7C9] rounded-full relative top-5  z-10'></div>
+      <div className='h-[86px] w-[86px] text-5xl text-[#206E30] flex justify-center items-center bg-[#BDF7C9] rounded-full relative top-5  z-10'>
+        {icon} </div>
       <div className='w-[339px] h-[272px] bg-white shadow-xl flex flex-col justify-center items-center'>
         <div className='w-[291px] h-[110px] grid justify-items-center'>
         <p className='text-[20px] font-semibold'>{title}</p>

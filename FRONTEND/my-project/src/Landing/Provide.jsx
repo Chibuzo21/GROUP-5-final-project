@@ -1,5 +1,6 @@
 import React from 'react'
 import Props from './ProviderProps'
+import { FiFilePlus } from 'react-icons/fi'
 
 function Provide() {
   return (
@@ -15,7 +16,7 @@ text="CareKonect: Consult doctors, get prescriptions, and access advice from hom
 text="CareKonect simplifies healthcare appointments, offering quick booking, 
 real-time slots and instant confirmations."/>
 
-<Props title="PRESCRIPTION MANAGEMENT" 
+<Props title="PRESCRIPTION MANAGEMENT" icon={<FiFilePlus/>}
 text="CareKonect: Digital prescription management for easy tracking and refils."/>
 
 <Props title="HEALTH RECORDS" 

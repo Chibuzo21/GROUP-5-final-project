@@ -25,13 +25,14 @@ function Nurse() {
         </div>
         <div className='flex  h-[50vh] w-screen justify-evenly'>
             <div className='w-[44vw] flex flex-col gap-4 justify-center  h-[50vh]'>
-                <p className='text-3xl font-bold'>ABOUT US</p>
-                <p className='text-2xl font-medium text-gray-700'>CareKonect simplifies health management with personalized advice,
+                <p className='text-[32px] font-bold'>ABOUT US</p>
+                <p className='text-[20px] text-gray-700'>CareKonect simplifies health management with personalized advice,
                 tailored recommendations, and 24/7 support for booking 
                 appointments and answering health questions. 
                 Enjoy a seamless, proactive, and secure healthcare 
                 experience with CareKonect.</p>
-                <button className='bg-[#206E30] rounded-md text-2xl font-semibold text-white h-[9vh] w-[18vw]'>Learn More</button>
+                <button className='bg-[#206E30] rounded-md text-[22.5px]
+                font-semibold text-white h-[63px] w-[321.4px]'>Learn More</button>
             </div>
             <div className='w-[34vw] h-[30vh]'><img src={girl} /></div>
         </div>
