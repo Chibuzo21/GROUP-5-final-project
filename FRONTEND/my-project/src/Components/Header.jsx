@@ -33,7 +33,7 @@ function Header() {
 
         <div
           className={`flex items-center justify-between  ${width} h-[54px] text-[20px]
-        font-medium text-[#979B98] `}
+        font-medium text-[#979B98] overflow-x-hidden `}
         >
           <p>{name}</p>
 

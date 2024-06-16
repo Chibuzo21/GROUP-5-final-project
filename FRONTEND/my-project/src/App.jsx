@@ -38,12 +38,12 @@ function App() {
               <Route path="/About" element={<About />} />
               <Route path="/Carekonect" element={<Carekonect />} />
               <Route path="/Contact" element={<Contact />} />
-              <Route
-                path="/Login"
-                element={<Login viewNav={viewNav} setViewnav={setViewnav} />}
-              />
-              <Route path="/Signup" element={<Signup />} />
             </Route>
+            <Route
+              path="/Login"
+              element={<Login viewNav={viewNav} setViewnav={setViewnav} />}
+            />
+            <Route path="/Signup" element={<Signup />} />
           </Routes>
         </Context.Provider>
       </main>
