@@ -11,6 +11,7 @@ function Header() {
   const { name } = useContext(Context);
   const { width, setwidth } = useContext(Context);
   const { logo, setLogo } = useContext(Context);
+  const [togglemenu, settogglemenu] = useState("h-0");
   useEffect(() => {
     const handlescrollHeader = () => {
       const scroll = window.scrollY;
@@ -21,19 +22,30 @@ function Header() {
     //cleanup function
     return () => window.removeEventListener("scroll", handlescrollHeader);
   }, []);
+  const handleclick = () => {
+    togglemenu === "h-0" ? settogglemenu("h-[68vh]") : settogglemenu("h-0");
+  };
 
   return (
     <>
       <main
-        className={` flex ${stickyHeader} z-40 justify-center items-center h-[12vh] static bg-white w-full shadow-md`}
+        className={` flex ${stickyHeader} z-40 sm:justify-center justify-around
+         items-center h-[12vh] w-screen
+         bg-white sm:w-full  shadow-md overflow-x-hidden`}
       >
         <div className={`${logo}`}>
-          <img src={Logo} alt="" className=" h-[39.51px] w-[167px]" />
+          <img
+            src={Logo}
+            alt=""
+            className=" sm:h-[39.51px] sm:w-[167px] h-[40px] w-[190px]"
+          />
         </div>
 
         <div
-          className={`flex items-center justify-between  ${width} h-[54px] text-[20px]
-        font-medium text-[#979B98] overflow-x-hidden `}
+          className={`flex sm:flex-row flex-col sm:static sm:top-0  top-20 sm:bg-white
+             bg-gray-800 ${togglemenu} sm:z-0 z-50 absolute justify-start items-center
+             sm:items-center sm:justify-between   ${width}  text-[20px] sm:gap-0 gap-8
+        font-medium sm:text-[#979B98] text-white overflow-x-hidden sm:h-[54px] `}
         >
           <p>{name}</p>
 
@@ -43,7 +55,8 @@ function Header() {
           <NavLink to="/Contact">Contact us</NavLink>
 
           <div
-            className="w-[270px] flex justify-between items-center text-[16px] 
+            className="w-[270px] sm:flex-row flex-col sm:gap-0 gap-8 flex 
+            justify-between items-center sm:text-[16px] text-[18px] 
             font-medium "
           >
             <NavLink
@@ -54,7 +67,9 @@ function Header() {
                   : "text-[#206E30] bg-white border-[#206E30] border-[1px] rounded-md"
               }
             >
-              <button className="h-[44px] w-[122px]">Sign Up</button>
+              <button className="sm:h-[44px] h-[37px] sm:w-[122px] w-[150px]">
+                Sign Up
+              </button>
             </NavLink>
             {!viewNav && (
               <NavLink
@@ -66,13 +81,17 @@ function Header() {
                 }
               >
                 {" "}
-                <button className=" h-[44px] w-[122px]">Login</button>
+                <button className=" sm:h-[44px] h-[37px] sm:w-[122px] w-[150px]">
+                  Login
+                </button>
               </NavLink>
             )}
           </div>
+          <NavLink to="/x">x</NavLink>
         </div>
         <button
-          className="rounded-md text-2xl md:hidden
+          onClick={handleclick}
+          className="rounded-md text-2xl sm:hidden
    p-3 shadow-md hover:opacity-50"
         >
           <MdMenu />
