@@ -10,12 +10,14 @@ function About() {
     <>
       <main>
         <div
-          className="md:h-[610px] h-[59vh] relative bg-cover bg-center bg-gradient-to-b w-screen grid content-center justify-items-center text-white text-xl font-bold"
+          className="md:h-[610px] h-[59vh]
+           relative bg-cover bg-center w-screen grid content-center justify-items-start text-white text-6xl font-bold"
           style={{
-            backgroundImage: `url(${Book})`,
+            backgroundImage: `linear-gradient(to top, rgba(0, 0, 0, 0.4) 0, 
+    rgba(0, 0, 0, 0.5) 60%, rgba(0, 0, 0, 0.5) 100%), url(${Book})`,
           }}
         >
-          ABOUT US
+          <p className="p-20 ">ABOUT US</p>
         </div>
         <div className="flex  h-[70vh] w-screen justify-evenly">
           <div className="w-[34vw] h-[30vh]">
@@ -38,7 +40,7 @@ function About() {
           </div>
         </div>
         <Offer />
-        < OurTeam />
+        <OurTeam />
         <Mission />
       </main>
     </>
