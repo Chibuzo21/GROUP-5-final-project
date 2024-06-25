@@ -9,6 +9,7 @@ import Carekonect from "./Pages/Carekonect";
 import "./App.css";
 import { useState } from "react";
 import { Context } from "./Context";
+import Successful from "./Pages/Successful";
 import Appointment from "./Pages/Appointment";
 
 function App() {
@@ -45,6 +46,7 @@ function App() {
               path="/Login"
               element={<Login viewNav={viewNav} setViewnav={setViewnav} />}
             />
+            <Route path="/Successful" element={<Successful />} />
             <Route path="/Signup" element={<Signup />} />
           </Routes>
         </Context.Provider>
