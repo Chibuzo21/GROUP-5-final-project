@@ -1,3 +1,4 @@
+import Header from "../Components/Header"
 import { IoMdCheckmark } from "react-icons/io";
 import { FcGoogle } from "react-icons/fc";
 import carekonect from "../assets/carekonect.jpg";
@@ -6,7 +7,9 @@ import { FaUserDoctor } from "react-icons/fa6";
 
 function Signup() {
   return (
-    <div className="flex items-center justify-center w-[98vw] h-[90vh] overflow-hidden">
+   <main classname="h-full">  
+    <Header />
+    <div className="flex items-center justify-center w-[98vw] h-[88vh] overflow-hidden">
       <section className="flex items-center justify-end h-[90vh] w-1/2">
         <img
           className="rounded-md w-[40vw] h-[70vh]"
@@ -87,6 +90,7 @@ function Signup() {
         </div>
       </section>
     </div>
+                </main>
   );
 }
 
