@@ -6,7 +6,6 @@ import {
   FaLinkedinIn,
   FaTwitter,
 } from "react-icons/fa";
-import {} from "react-icons/ti";
 import { SiAdobe } from "react-icons/si";
 import { MdCopyright } from "react-icons/md";
 import { IoMdArrowDropdown } from "react-icons/io";

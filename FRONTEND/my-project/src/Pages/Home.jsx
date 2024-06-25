@@ -12,7 +12,7 @@ function Home() {
   return (
     <main
       className={`max-w-full overflow-x-hidden  ${
-        error ? "overflow-hidden h-[88vh]" : "overflow-visible h-full"
+        error ? "overflow-hidden fixed h-[88vh]" : "overflow-visible h-full"
       }`}
     >
       <Book error={error} setError={setError} />
