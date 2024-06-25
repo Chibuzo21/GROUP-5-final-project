@@ -1,4 +1,3 @@
-import React from "react";
 import { IoMdCheckmark } from "react-icons/io";
 import { FcGoogle } from "react-icons/fc";
 import carekonect from "../assets/carekonect.jpg";
