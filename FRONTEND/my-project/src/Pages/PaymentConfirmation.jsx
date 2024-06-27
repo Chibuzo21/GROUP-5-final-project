@@ -1,4 +1,4 @@
-import React from "react";
+
 import { GoThumbsup } from "react-icons/go";
 
 const on = {
