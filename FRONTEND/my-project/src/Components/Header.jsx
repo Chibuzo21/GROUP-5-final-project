@@ -10,7 +10,10 @@ function Header() {
   const { viewNav } = useContext(Context);
   const { name } = useContext(Context);
   const { width, setwidth } = useContext(Context);
+  const { nameWidth, setNamewidth } = useContext(Context);
   const { logo, setLogo } = useContext(Context);
+  const { Navwidth, setnavwidth } = useContext(Context);
+
   const [togglemenu, settogglemenu] = useState("h-0");
   useEffect(() => {
     const handlescrollHeader = () => {
@@ -47,7 +50,7 @@ function Header() {
              sm:items-center sm:justify-between   ${width}  text-[20px] sm:gap-0 gap-8
         font-medium sm:text-[#979B98] text-white overflow-x-hidden sm:h-[54px] `}
         >
-          <p>{name}</p>
+          <p className={`${nameWidth}`}>{name}</p>
 
           <NavLink to="/">Home</NavLink>
           <NavLink to="/About">About</NavLink>
@@ -55,22 +58,24 @@ function Header() {
           <NavLink to="/Contact">Contact us</NavLink>
 
           <div
-            className="w-[270px] sm:flex-row flex-col sm:gap-0 gap-8 flex 
+            className={`${Navwidth} sm:flex-row flex-col sm:gap-0 gap-8 flex 
             justify-between items-center sm:text-[16px] text-[18px] 
-            font-medium "
+            font-medium `}
           >
-            <NavLink
-              to="/Signup"
-              className={({ isActive }) =>
-                isActive
-                  ? "text-white bg-[#206E30] border-[#206E30] border-[1px] rounded-md"
-                  : "text-[#206E30] bg-white border-[#206E30] border-[1px] rounded-md"
-              }
-            >
-              <button className="sm:h-[44px] h-[37px] sm:w-[122px] w-[150px]">
-                Sign Up
-              </button>
-            </NavLink>
+            {!viewNav && (
+              <NavLink
+                to="/Signup"
+                className={({ isActive }) =>
+                  isActive
+                    ? "text-white bg-[#206E30] border-[#206E30] border-[1px] rounded-md"
+                    : "text-[#206E30] bg-white border-[#206E30] border-[1px] rounded-md"
+                }
+              >
+                <button className="sm:h-[44px] h-[37px] sm:w-[122px] w-[150px]">
+                  Sign Up
+                </button>
+              </NavLink>
+            )}
             {!viewNav && (
               <NavLink
                 to="/Login"

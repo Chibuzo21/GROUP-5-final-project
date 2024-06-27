@@ -13,6 +13,7 @@ import { useNavigate } from "react-router-dom";
 function Appointment() {
   const navigate = useNavigate();
   const [visible, setVisible] = useState("");
+  const [active, setActive] = useState(null);
   const [bg, setbg] = useState("");
   const [BtnText, setBtnText] = useState(false);
   const Book = () => {
@@ -22,8 +23,14 @@ function Appointment() {
       navigate("/Successful");
     }, 2000);
   };
+  const onclick = (index) => {
+    setActive(index);
+  };
   const handleChange = (event) => {
     setVisible("hidden");
+  };
+  const videoclick = () => {
+    navigate("/Video");
   };
   return (
     <>
@@ -84,28 +91,28 @@ function Appointment() {
             </div>
             <div className="h-[27vh]">
               <p className="font-medium text-xl h-[5vh]">Choose Category</p>
-              <div className="flex text-[#A7A7B9] flex-row gap-2 items-center w-[38vw] flex-wrap">
-                <button className="bg-[#F3F7FA] w-[7vw] rounded-xl h-[8vh] shadow-lg">
-                  General
-                </button>
-                <button className="bg-[#F3F7FA] w-[7vw] rounded-xl h-[8vh] shadow-lg">
-                  Pediatrics
-                </button>
-                <button className="bg-[#F3F7FA] w-[7vw] rounded-xl h-[8vh] shadow-lg">
-                  Cardiology
-                </button>
-                <button className="bg-[#F3F7FA] w-[7vw] rounded-xl h-[8vh] shadow-lg">
-                  Psychology
-                </button>
-                <button className="bg-[#F3F7FA] w-[7vw] rounded-xl h-[8vh] shadow-lg">
-                  Orthopedist
-                </button>
-                <button className="bg-[#F3F7FA] w-[7vw] rounded-xl h-[8vh] shadow-lg">
-                  Dietitian
-                </button>
-                <button className="bg-[#F3F7FA] w-[7vw] rounded-xl h-[8vh] shadow-lg">
-                  Dentist
-                </button>
+              <div className="flex  flex-row gap-3 items-center w-[45vw] flex-wrap">
+                {[
+                  "General ",
+                  "Pediatrics ",
+                  "Cardiology ",
+                  "Psychology",
+                  "Orthopedist",
+                  "Dietitian",
+                  "Dentist",
+                ].map((category, index) => (
+                  <button
+                    key={index}
+                    onClick={() => onclick(index)}
+                    className={` w-[7vw] rounded-xl h-[8vh] shadow-lg ${
+                      active === index
+                        ? "bg-[#16A362] text-white"
+                        : "bg-[#F3F7FA] text-[#A7A7B9]"
+                    }`}
+                  >
+                    {category}
+                  </button>
+                ))}
               </div>
             </div>
             <div className="flex h-[73vh] justify-between w-[65vw]">
@@ -141,7 +148,11 @@ function Appointment() {
           </div>
           <div className="h-[50vh]  w-[30vw] grid ">
             <div className=" flex h-[20vh] flex-col items-center justify-center">
-              <p className="text-6xl text-[#206E30] flex justify-center items-center">
+              <p
+                onClick={videoclick}
+                className="text-6xl text-[#206E30] flex justify-center
+                 items-center cursor-pointer"
+              >
                 <BiVideoPlus className="w-[6vw]" />
                 <span className="text-3xl font-bold">Video Call</span>
               </p>

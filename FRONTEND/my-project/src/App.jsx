@@ -11,11 +11,14 @@ import { useState } from "react";
 import { Context } from "./Context";
 import Successful from "./Pages/Successful";
 import Appointment from "./Pages/Appointment";
+import Video from "./Pages/Video";
 
 function App() {
   const [viewNav, setViewnav] = useState(false);
-  const [name, setName] = useState("");
+  const [name, setName] = useState();
+  const [nameWidth, setNamewidth] = useState("w-0");
   const [width, setWidth] = useState("sm:w-[72vw] w-full");
+  const [Navwidth, setnavwidth] = useState("w-[270px]");
 
   const [logo, setLogo] = useState("sm:w-[17vw] w-[35vw]");
 
@@ -32,6 +35,10 @@ function App() {
             setWidth,
             logo,
             setLogo,
+            Navwidth,
+            setnavwidth,
+            nameWidth,
+            setNamewidth,
           }}
         >
           <Routes>
@@ -47,6 +54,7 @@ function App() {
               element={<Login viewNav={viewNav} setViewnav={setViewnav} />}
             />
             <Route path="/Successful" element={<Successful />} />
+            <Route path="/Video" element={<Video />} />
             <Route path="/Signup" element={<Signup />} />
           </Routes>
         </Context.Provider>
