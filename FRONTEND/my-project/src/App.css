@@ -1,19 +1,80 @@
-a.active{
-color: rgb(68, 148, 68);
+a.active {
+  color: rgb(68, 148, 68);
 
-font-weight:500;
+  font-weight: 500;
 }
-.chief::after{
-    
-    content: "";
-    position: absolute;
-    bottom: -40px;
-    z-index: 1;
-    transform: translateX(-50%);
-    left:18%;
-    width: 0;
-    height: 0;
-    border-left: 20px solid transparent;
-    border-right: 20px solid transparent;
-    border-top: 45px solid white;
-    }
+.chief::after {
+  content: "";
+  position: absolute;
+  bottom: -40px;
+  z-index: 1;
+  transform: translateX(-50%);
+  left: 18%;
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-top: 45px solid white;
+}
+.react-calendar {
+  width: 100%;
+  border: 2px solid #bce6ce;
+  border-radius: 0.5rem;
+}
+.calendar-container.react-calendar__tile--active {
+  background-color: red;
+  color: white;
+}
+.react-calendar__tile--now {
+  background-color: #e9ecef;
+}
+.react-calendar__tile--hover {
+  background-color: #f0f0f0;
+}
+.react-calendar__tile--range {
+  background-color: #d4edda;
+}
+.react-calendar__navigation button {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.react-clock {
+  width: 400px;
+
+  margin: auto;
+}
+.react-time-picker {
+  border-radius: 8px;
+  width: 20vw;
+  height: 10vh;
+  padding: 10px;
+}
+.react-time-picker__inputGroup {
+  display: flex;
+  width: 12vw;
+  align-items: center;
+  justify-content: center;
+  font-size: 27px;
+}
+.react-time-picker__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.myclock .react-time-picker__inputGroup__input {
+  width: 5vw;
+  border: none;
+  font-size: px;
+  text-align: center;
+  margin: 0 2px;
+}
+.myclock .react-time-picker__inputGroup__leadingZero {
+  display: none;
+}
+.myclock .react-time-picker__inputGroup__amPm {
+  font-size: 14px;
+}
+.react-time-picker__inputGroup__divider {
+  font-size: 24px;
+}

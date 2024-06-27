@@ -9,13 +9,15 @@ import Carekonect from "./Pages/Carekonect";
 import "./App.css";
 import { useState } from "react";
 import { Context } from "./Context";
+import Successful from "./Pages/Successful";
+import Appointment from "./Pages/Appointment";
 
 function App() {
   const [viewNav, setViewnav] = useState(false);
   const [name, setName] = useState("");
-  const [width, setWidth] = useState("w-[72vw]");
+  const [width, setWidth] = useState("sm:w-[72vw] w-full");
 
-  const [logo, setLogo] = useState("w-[17vw]");
+  const [logo, setLogo] = useState("sm:w-[17vw] w-[35vw]");
 
   return (
     <>
@@ -38,11 +40,13 @@ function App() {
               <Route path="/About" element={<About />} />
               <Route path="/Carekonect" element={<Carekonect />} />
               <Route path="/Contact" element={<Contact />} />
+              <Route path="/x" element={<Appointment />} />
             </Route>
             <Route
               path="/Login"
               element={<Login viewNav={viewNav} setViewnav={setViewnav} />}
             />
+            <Route path="/Successful" element={<Successful />} />
             <Route path="/Signup" element={<Signup />} />
           </Routes>
         </Context.Provider>
