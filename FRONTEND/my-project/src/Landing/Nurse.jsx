@@ -8,8 +8,9 @@ import Medicare from "../assets/Medicare.png";
 import Otema from "../assets/Otema.png";
 import Stork from "../assets/stork.png";
 import Med from "../assets/MedicalCare.png";
-
+import { useNavigate } from "react-router-dom";
 function Nurse() {
+  const navigate = useNavigate();
   return (
     <>
       <main className="h-[100vh] w-full ">
@@ -39,6 +40,9 @@ function Nurse() {
               proactive, and secure healthcare experience with CareKonect.
             </p>
             <button
+              onClick={() => {
+                navigate("/About");
+              }}
               className="bg-[#206E30] rounded-md sm:text-[22.5px] text-[19px]
                 font-semibold text-white sm:h-[63px] h-[58px] w-[270px] sm:w-[321.4px]"
             >

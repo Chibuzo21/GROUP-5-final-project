@@ -9,10 +9,12 @@ import { IoEyeOffOutline, IoEyeOutline } from "react-icons/io5";
 
 function Login() {
   const [showMark, setshowMark] = useState(false);
-  const { viewNav, setViewnav } = useContext(Context);
-  const { name, setName } = useContext(Context);
-  const { width, setWidth } = useContext(Context);
-  const { logo, setLogo } = useContext(Context);
+  const { setViewnav } = useContext(Context);
+  const { setName } = useContext(Context);
+  const { setWidth } = useContext(Context);
+  const { setLogo } = useContext(Context);
+  const { Navwidth, setnavwidth } = useContext(Context);
+  const { setNamewidth } = useContext(Context);
   const [username, setusername] = useState("");
   const navigate = useNavigate();
   const [error, setError] = useState(false);
@@ -38,23 +40,27 @@ function Login() {
       setPasswordicon(<IoEyeOutline />);
     }
   };
-  const handleclick = (e) => {
-    e.preventDefault();
-    setViewnav(true);
-    setTimeout(() => {
-      setName(username);
-      setWidth("w-[78vw]");
-      setLogo(" w-[14vw]");
-    }, 1000);
+  const handleclick = (event) => {
+    event.preventDefault;
     if (!ValidateUsername(username)) {
       setError(true);
+      setViewnav(false);
+      setName(null);
     }
     if (!Validatepassword(password)) {
       setPassworderror(true);
+      setViewnav(false);
+      setName(null);
     }
     if (ValidateUsername(username) && Validatepassword(password)) {
       setTimeout(() => {
         navigate("/");
+        setViewnav(true);
+        setName(username);
+        setWidth("w-[78vw]");
+        setLogo(" w-[19vw]");
+        setnavwidth("w-0");
+        setNamewidth("w-[15vw]");
       }, 600);
     }
   };
@@ -73,6 +79,7 @@ function Login() {
   const signbtn = () => {
     navigate("/Signup");
   };
+
   return (
     <>
       <Header />

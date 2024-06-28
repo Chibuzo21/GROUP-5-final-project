@@ -1,13 +1,39 @@
+import { MdOutlineMailOutline } from "react-icons/md";
 import Frame from "../assets/Frame.jpg";
+import { FiPhone } from "react-icons/fi";
+import { FaqData } from "./FaqData";
+import { VscAdd } from "react-icons/vsc";
+import { RxCross1 } from "react-icons/rx";
+import { useState } from "react";
+
+const FAQitem = ({ isOpen, faq, onClick }) => (
+  <div className="h-fit w-[48vw] ">
+    <div className="flex w-full items-center justify-between h-[10vh]">
+      <p className="font-semibold text-lg">{faq.question}</p>
+      <button onClick={onClick} className="text-2xl font-bold ">
+        {isOpen ? <RxCross1 /> : <VscAdd />}
+      </button>
+    </div>
+    {isOpen && <div className="leading-[32px]">{faq.answer}</div>}
+    <div className="border-t border-black w-[48vw] h-[6vh]"></div>
+  </div>
+);
 
 function Contact() {
+  const [openIndex, setOpenindex] = useState(null);
+  const handleToggle = (index) => {
+    setOpenindex(openIndex === index ? null : index);
+  };
   return (
-    <body>
+    <main className="overflow-x-hidden">
       <section
         className="h-[65vh] w-screen"
         style={{ backgroundImage: `url(${Frame})` }}
       >
-        <div className="text-white h-full w-[50vw] flex items-center justify-center text-[56px] leading-[67.77px] font-bold">
+        <div
+          className="text-white h-full w-[50vw] flex items-center justify-center 
+        text-[56px] leading-[67.77px] font-bold"
+        >
           CONTACT US
         </div>
       </section>
@@ -17,8 +43,8 @@ function Contact() {
             <h1 className="text-5xl font-bold h-[58px] w-[293px]">
               Get In Touch
             </h1>
-            <div className=" h-[20vh] w-[30vw] gap-2">
-              <p>
+            <div className=" h-[30vh] w-[30vw] gap-2">
+              <p className="h-[10vh]">
                 Feel free to contact us and we'll get back <br /> to you as soon
                 as we can.
               </p>
@@ -60,7 +86,67 @@ function Contact() {
           </div>
         </div>
       </section>
-    </body>
+      <section
+        className=" w-full h-[430px] flex justify-center items-center
+       bg-gradient-to-b from-[#5DD9A0] via-[#42A96E] to-[#206E30] flex-row gap-10"
+      >
+        <div
+          className="bg-white w-[366px] h-[287px] rounded-lg flex 
+        justify-center items-start flex-col  px-5"
+        >
+          <span className="text-[#206E30] text-[10vh] text-left h-[14vh]">
+            <MdOutlineMailOutline />
+          </span>
+          <p className="text-md font-bold h-[6vh] ">Email:</p>
+          <div className="grid gap-2 font-normal">
+            <p>General inquiries: info@CareKonect.com</p>
+            <p>Customer Support: support@CareKonect.com</p>
+            <p>Patnerships: patnerships@CareKonect.com</p>
+          </div>
+        </div>
+        <div
+          className="bg-white w-[366px] h-[287px] rounded-lg flex 
+        justify-center items-start flex-col  px-5"
+        >
+          <span className="text-[#206E30] text-[10vh] text-left h-[14vh]">
+            <FiPhone />
+          </span>
+          <p className="text-md font-bold h-[6vh] ">Phone:</p>
+          <div className="grid gap-2 font-normal">
+            <p>Main Line: 1-800-123-4567</p>
+            <p>Customer Support: 1-800-765-4321</p>
+          </div>
+        </div>
+        <div></div>
+      </section>
+      <section className="flex justify-center items-center h-[790px] ">
+        <section className="flex h-[640px] w-[1140px]">
+          <section className="h-[60vh] w-[38vw]">
+            <p className="text-[#206E30] h-[3vh]">Got Questions?</p>
+            <p className="text-[48px] text-[#343A40] w-[40vw] h-[26vh] font-bold">
+              Frequently Asked Questions
+            </p>
+            <p className="text-[#206E30] text-[16px] w-[32vw] h-[12vh] ">
+              Still have questions that aren't covered? visit our help desk
+              today and get the answers you need.
+            </p>
+            <button className="bg-[#16A362] text-white h-[59px] w-[304px] rounded-lg">
+              Contact our Help Desk
+            </button>
+          </section>
+          <section className="w-[50vw] h-[70vh]">
+            {FaqData.map((faq, index) => (
+              <FAQitem
+                key={index}
+                faq={faq}
+                isOpen={openIndex === index}
+                onClick={() => handleToggle(index)}
+              />
+            ))}
+          </section>
+        </section>
+      </section>
+    </main>
   );
 }
 export default Contact;
