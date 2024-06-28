@@ -167,7 +167,12 @@ function Appointment() {
                 </span>
                 <span className="text-3xl font-bold w-[10vw]">Chat</span>
               </div>
-              <button className="w-[11vw] relative left-[33%] text-white font-medium text-lg bg-[#343A40] h-[8vh] rounded-md">
+              <button
+                onClick={() => {
+                  navigate("/Chat");
+                }}
+                className="w-[11vw] relative left-[33%] text-white font-medium text-lg bg-[#343A40] h-[8vh] rounded-md"
+              >
                 Learn More
               </button>
             </div>

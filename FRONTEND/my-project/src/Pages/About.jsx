@@ -8,9 +8,9 @@ import OurTeam from "../Landing/OurTeam";
 function About() {
   return (
     <>
-      <main>
+      <main className="overflow-x-hidden">
         <div
-          className="md:h-[610px] h-[59vh]
+          className="md:h-[610px] h-[59vh] 
            relative bg-cover bg-center w-screen grid content-center justify-items-start text-white text-6xl font-bold"
           style={{
             backgroundImage: `linear-gradient(to top, rgba(0, 0, 0, 0.4) 0, 

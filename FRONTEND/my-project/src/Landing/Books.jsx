@@ -18,7 +18,7 @@ function Books({ error, setError }) {
   const Logbtn = () => {
     setBg("opacity-60");
     setTimeout(() => {
-      navigate("/Login");
+      navigate("/Signup");
     }, 800);
   };
   const cancel = () => {
@@ -84,7 +84,7 @@ function Books({ error, setError }) {
                 className={`h-[41.42px] w-[202.83px] bg-[#16A362] text-sm
          text-white ${bg}`}
               >
-                GO TO LOGIN PAGE
+                SIGN UP
               </button>
             </section>
           </section>

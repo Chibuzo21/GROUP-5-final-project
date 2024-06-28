@@ -12,6 +12,12 @@ import { Context } from "./Context";
 import Successful from "./Pages/Successful";
 import Appointment from "./Pages/Appointment";
 import Video from "./Pages/Video";
+import Chat from "./Pages/Chat";
+import John from "./Pages/Privatechats/John";
+import Jane from "./Pages/Privatechats/Jane";
+import Will from "./Pages/Privatechats/Will";
+import Susan from "./Pages/Privatechats/Susan";
+import Philip from "./Pages/Privatechats/Philip";
 
 function App() {
   const [viewNav, setViewnav] = useState(false);
@@ -55,7 +61,13 @@ function App() {
             />
             <Route path="/Successful" element={<Successful />} />
             <Route path="/Video" element={<Video />} />
+            <Route path="/Chat" element={<Chat />} />
             <Route path="/Signup" element={<Signup />} />
+            <Route path="/Jane" element={<Jane />} />
+            <Route path="/John" element={<John />} />
+            <Route path="/Philip" element={<Philip />} />
+            <Route path="/Susan" element={<Susan />} />
+            <Route path="/Will" element={<Will />} />
           </Routes>
         </Context.Provider>
       </main>
