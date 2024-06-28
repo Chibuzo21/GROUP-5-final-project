@@ -78,3 +78,11 @@ a.active {
 .react-time-picker__inputGroup__divider {
   font-size: 24px;
 }
+@media (max-width: 768px) {
+  .payment-confirmation {
+    padding: 1px;
+  }
+  .start-video-call {
+    font-size: 0.8px;
+  }
+}
