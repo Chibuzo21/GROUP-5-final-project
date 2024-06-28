@@ -4,9 +4,9 @@ import { IoCameraOutline } from "react-icons/io5";
 import { MdOutlineVideocam } from "react-icons/md";
 import { MdOutlineLocalPhone } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
-import Nurse7 from "/oga.png";
+import lady from "/lady.png";
 
-const Privatechat = () => {
+const Nurse4 = () => {
   const [messages, setMessages] = useState([
     { text: "I'm all ears.", sender: "doctor" },
     { text: "Visit the hospital if you notice any changes.", sender: "doctor" },
@@ -56,7 +56,7 @@ const Privatechat = () => {
               <div className="w-[6vw] h-[9vh]">
                 {" "}
                 <div className="w-[4vw] h-[5vh] rounded-full">
-                  <img src={Nurse7} alt="" srcset="" />
+                  <img src={lady} alt="" srcset="" />
                 </div>
               </div>
               <div className=" w-[18vw]">
@@ -135,4 +135,4 @@ const Privatechat = () => {
   );
 };
 
-export default Privatechat;
+export default Nurse4;

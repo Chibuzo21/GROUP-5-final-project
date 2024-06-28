@@ -4,12 +4,14 @@ import { BiVideoPlus } from "react-icons/bi";
 import Old from "/old.jpg";
 import { IoMdCheckmark } from "react-icons/io";
 import Footer from "../Components/Footer";
+import { useNavigate } from "react-router-dom";
 
 function Video() {
   const [showMark, setShowmark] = useState(false);
   const icon = () => {
     setShowmark(!showMark);
   };
+  const navigate = useNavigate();
   return (
     <>
       <main className="h-full">
@@ -109,6 +111,11 @@ function Video() {
                       Your information is secure and encrypted.
                     </p>
                     <button
+                      onClick={() => {
+                        setTimeout(() => {
+                          navigate("/Pay");
+                        }, 1000);
+                      }}
                       className="bg-[#16A362] text-xl font-medium
                      text-white h-[9vh] w-[11vw] rounded-md"
                     >

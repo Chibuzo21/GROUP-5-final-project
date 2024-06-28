@@ -50,7 +50,9 @@ function Header() {
              sm:items-center sm:justify-between   ${width}  text-[20px] sm:gap-0 gap-8
         font-medium sm:text-[#979B98] text-white overflow-x-hidden sm:h-[54px] `}
         >
-          <p className={`${nameWidth}`}>{name}</p>
+          <p className={`${nameWidth} text-gray-700 font-semibold italic`}>
+            {name}
+          </p>
 
           <NavLink to="/">Home</NavLink>
           <NavLink to="/About">About</NavLink>
@@ -92,7 +94,6 @@ function Header() {
               </NavLink>
             )}
           </div>
-          <NavLink to="/x">x</NavLink>
         </div>
         <button
           onClick={handleclick}

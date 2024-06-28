@@ -3,7 +3,7 @@ import { CiSearch } from "react-icons/ci";
 import Nurse1 from "/Nurse1.svg";
 import Nurse2 from "/Nurseblue.png";
 import Nurse3 from "/Manblack.png";
-import Nurse4 from "/Frame 12451.png";
+import Nurse4 from "/lady.png";
 import Nurse5 from "/Frame 12452.png";
 import Nurse6 from "/blueman.png";
 import Nurse7 from "/oga.png";
@@ -48,13 +48,87 @@ function Chat() {
       <section className="w-[50vw] h-[20vh] ">
         <p className="text-2xl font-medium h-[7vh]">Active Now</p>
         <div className="flex justify-between w-[50vw] ">
-          <Props image={Nurse1} />
-          <Props image={Nurse2} />
-          <Props image={Nurse3} />
-          <Props image={Nurse4} /> <Props image={Nurse5} />
-          <Props image={Nurse6} />
-          <Props image={Nurse7} />
-          <Props image={Nurse8} />
+          <div
+            onClick={() => {
+              setTimeout(() => {
+                navigate("/Jane");
+              }, 1000);
+            }}
+            className="cursor-pointer"
+          >
+            <Props image={Nurse1} />
+          </div>
+          <div
+            onClick={() => {
+              setTimeout(() => {
+                navigate("/Nurse2");
+              }, 1000);
+            }}
+            className="cursor-pointer"
+          >
+            <Props image={Nurse2} />
+          </div>
+          <div
+            onClick={() => {
+              setTimeout(() => {
+                navigate("/Nurse3");
+              }, 1000);
+            }}
+            className="cursor-pointer"
+          >
+            <Props image={Nurse3} />
+          </div>
+          <div
+            onClick={() => {
+              setTimeout(() => {
+                navigate("/Nurse4");
+              }, 1000);
+            }}
+            className="cursor-pointer"
+          >
+            <Props image={Nurse4} />{" "}
+          </div>
+          <div
+            onClick={() => {
+              setTimeout(() => {
+                navigate("/Susan");
+              }, 1000);
+            }}
+            className="cursor-pointer"
+          >
+            {" "}
+            <Props image={Nurse5} />
+          </div>
+          <div
+            onClick={() => {
+              setTimeout(() => {
+                navigate("/John");
+              }, 1000);
+            }}
+            className="cursor-pointer"
+          >
+            <Props image={Nurse6} />
+          </div>
+          <div
+            onClick={() => {
+              setTimeout(() => {
+                navigate("/Philip");
+              }, 1000);
+            }}
+            className="cursor-pointer"
+          >
+            <Props image={Nurse7} />
+          </div>
+          <div
+            onClick={() => {
+              setTimeout(() => {
+                navigate("/Will");
+              }, 1000);
+            }}
+            className="cursor-pointer"
+          >
+            <Props image={Nurse8} />
+          </div>
         </div>
       </section>
       <section className="w-[50vw]">

@@ -13,7 +13,7 @@ function Nurse() {
   const navigate = useNavigate();
   return (
     <>
-      <main className="h-[100vh] w-full ">
+      <main className="h-[110vh] w-full ">
         <div className="sm:h-[30vh] h-0 justify-start flex sm:w-[95vw] w-0 flex-row gap-3">
           <img src={Gosab} alt="" className="w-[13vw] h-[22vh]" />
           <img src={Drug} alt="" className="h-[19vh]" />
@@ -30,24 +30,28 @@ function Nurse() {
         >
           <div
             className="sm:w-[44vw] w-[98vw] flex flex-col sm:gap-4 gap-8 justify-center
-          sm:h-[50vh] h-[96vh] items-center sm:items-start"
+          sm:h-[50vh] h-[96vh] items-center sm:items-center"
           >
-            <p className="sm:text-[32px] text-[26px] font-bold">ABOUT US</p>
+            <p className="sm:text-[32px] text-[26px] font-bold w-full">
+              ABOUT US
+            </p>
             <p className=" sm:text-[20px] text-[19px] text-gray-700 text-center sm:text-left">
               CareKonect simplifies health management with personalized advice,
               tailored recommendations, and 24/7 support for booking
               appointments and answering health questions. Enjoy a seamless,
               proactive, and secure healthcare experience with CareKonect.
             </p>
-            <button
-              onClick={() => {
-                navigate("/About");
-              }}
-              className="bg-[#206E30] rounded-md sm:text-[22.5px] text-[19px]
+            <div className="w-full">
+              <button
+                onClick={() => {
+                  navigate("/About");
+                }}
+                className="bg-[#206E30] rounded-md sm:text-[22.5px] text-[19px]
                 font-semibold text-white sm:h-[63px] h-[58px] w-[270px] sm:w-[321.4px]"
-            >
-              Learn More
-            </button>
+              >
+                Learn More
+              </button>
+            </div>
           </div>
           <div className="sm:w-[34vw] sm:h-[30vh] w-[85vw] h-[40vh]">
             <img src={girl} />

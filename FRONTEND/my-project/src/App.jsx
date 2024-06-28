@@ -1,4 +1,3 @@
-
 import Home from "./Pages/Home";
 import About from "./Pages/About";
 import Login from "./Pages/Login";
@@ -19,7 +18,10 @@ import Jane from "./Pages/Privatechats/Jane";
 import Will from "./Pages/Privatechats/Will";
 import Susan from "./Pages/Privatechats/Susan";
 import Philip from "./Pages/Privatechats/Philip";
-
+import PaymentConfirmation from "./Pages/PaymentConfirmation";
+import Nurse2 from "./Pages/Privatechats/Nurse2";
+import Nurse3 from "./Pages/Privatechats/Nurse3";
+import Nurse4 from "./Pages/Privatechats/Nurse4";
 function App() {
   const [viewNav, setViewnav] = useState(false);
   const [name, setName] = useState();
@@ -27,13 +29,12 @@ function App() {
   const [width, setWidth] = useState("sm:w-[72vw] w-full");
   const [Navwidth, setnavwidth] = useState("w-[270px]");
 
-
-   const [logo, setLogo] = useState("sm:w-[17vw] w-[35vw]");
+  const [logo, setLogo] = useState("sm:w-[17vw] w-[35vw]");
 
   return (
     <>
-      <main className="h-screen flex justify-center items-center bg-light-gray">
-        {/* <Context.Provider
+      <section>
+        <Context.Provider
           value={{
             viewNav,
             setViewnav,
@@ -71,10 +72,13 @@ function App() {
             <Route path="/Philip" element={<Philip />} />
             <Route path="/Susan" element={<Susan />} />
             <Route path="/Will" element={<Will />} />
+            <Route path="/Pay" element={<PaymentConfirmation />} />
+            <Route path="/Nurse3" element={<Nurse3 />} />
+            <Route path="/Nurse2" element={<Nurse2 />} />
+            <Route path="/Nurse4" element={<Nurse4 />} />
           </Routes>
-        </Context.Provider> */}
-        <PaymentConfirmation />
-      </main>
+        </Context.Provider>
+      </section>
     </>
   );
 }

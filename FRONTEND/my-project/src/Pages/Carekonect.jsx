@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 function Carekonect() {
-  return (
-    <div>Carekonect</div>
-  )
+  return <div className="h-[100vh]">Carekonect</div>;
 }
 
-export default Carekonect
+export default Carekonect;

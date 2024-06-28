@@ -60,7 +60,7 @@ function Login() {
         setWidth("w-[78vw]");
         setLogo(" w-[19vw]");
         setnavwidth("w-0");
-        setNamewidth("w-[15vw]");
+        setNamewidth("w-fit");
       }, 600);
     }
   };

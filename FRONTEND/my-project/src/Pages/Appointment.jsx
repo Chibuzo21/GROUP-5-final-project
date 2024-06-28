@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Pic from "../assets/Pic.svg";
 import { IoLocationOutline } from "react-icons/io5";
 import { IoIosArrowDown } from "react-icons/io";
@@ -32,6 +32,9 @@ function Appointment() {
   const videoclick = () => {
     navigate("/Video");
   };
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [navigate]);
   return (
     <>
       <main className="w-full h-full ">
@@ -146,32 +149,28 @@ function Appointment() {
           <div className="h-[60vh] w-[36vw] ">
             <img src={Phone} className="h-[59vh] w-[36vw]" />
           </div>
-          <div className="h-[50vh]  w-[30vw] grid ">
+          <div className="h-[50vh]  w-[30vw]  ">
             <div className=" flex h-[20vh] flex-col items-center justify-center">
               <p
-                onClick={videoclick}
-                className="text-6xl text-[#206E30] flex justify-center
+                className="text-6xl flex justify-center
                  items-center cursor-pointer"
               >
                 <BiVideoPlus className="w-[6vw]" />
                 <span className="text-3xl font-bold">Video Call</span>
               </p>
-              <button className="w-[11vw] relative left-[33%]  text-white font-medium text-lg bg-[#343A40] h-[8vh] rounded-md">
-                Learn More
-              </button>
             </div>
-            <div className=" flex flex-col items-center justify-center h-[20vh]  ">
-              <div className=" text-[#206E30] flex justify-between items-center w-[15vw]">
+            <div className=" flex flex-col items-center justify-center h-[30vh]  ">
+              <div className=" flex justify-between items-center w-[15vw] h-[30vh] ">
                 <span className="w-[4vw]">
                   <MdOutlineChat className=" text-6xl w-[4vw] " />
                 </span>
                 <span className="text-3xl font-bold w-[10vw]">Chat</span>
               </div>
               <button
-                onClick={() => {
-                  navigate("/Chat");
-                }}
-                className="w-[11vw] relative left-[33%] text-white font-medium text-lg bg-[#343A40] h-[8vh] rounded-md"
+                onClick={videoclick}
+                className="w-[11vw] relative 
+                left-[33%] 
+                text-white font-medium text-lg bg-[#343A40] h-[10vh] rounded-md"
               >
                 Learn More
               </button>

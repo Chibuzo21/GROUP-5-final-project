@@ -19,8 +19,8 @@ function About() {
         >
           <p className="p-20 ">ABOUT US</p>
         </div>
-        <div className="flex  h-[70vh] w-screen justify-evenly">
-          <div className="w-[34vw] h-[30vh]">
+        <div className="flex  h-[90vh] w-screen justify-evenly items-center">
+          <div className="w-[34vw] h-[60vh]">
             <img src={girl} />
           </div>
           <div className="w-[44vw] flex flex-col gap-4 justify-center  h-[50vh]">
@@ -31,12 +31,6 @@ function About() {
               appointments and answering health questions. Enjoy a seamless,
               proactive, and secure healthcare experience with CareKonect.
             </p>
-            <button
-              className="bg-[#206E30] rounded-md text-[22.5px]
-                font-semibold text-white h-[63px] w-[321.4px]"
-            >
-              Learn More
-            </button>
           </div>
         </div>
         <Offer />

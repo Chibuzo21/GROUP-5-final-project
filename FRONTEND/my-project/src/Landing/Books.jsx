@@ -1,18 +1,26 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Book from "../assets/Book.jpg";
 import { RxCross2 } from "react-icons/rx";
 import { useNavigate } from "react-router-dom";
+import { Context } from "../Context";
 
 function Books({ error, setError }) {
   const [btnText, setBtnText] = useState(false);
   const [bg, setBg] = useState("");
+  const { nameWidth, setNamewidth } = useContext(Context);
 
   const handleclick = () => {
     setBtnText(true);
-    setTimeout(() => {
-      setError(true);
-      setBtnText(false);
-    }, 1000);
+    if (nameWidth === "w-0") {
+      setTimeout(() => {
+        setError(true);
+        setBtnText(false);
+      }, 1000);
+    } else {
+      setTimeout(() => {
+        navigate("/x");
+      }, 1000);
+    }
   };
   const navigate = useNavigate();
   const Logbtn = () => {
