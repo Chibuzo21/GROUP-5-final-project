@@ -4,7 +4,8 @@ import { FiPhone } from "react-icons/fi";
 import { FaqData } from "./FaqData";
 import { VscAdd } from "react-icons/vsc";
 import { RxCross1 } from "react-icons/rx";
-import { useState } from "react";
+import { useState, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 
 const FAQitem = ({ isOpen, faq, onClick }) => (
   <div className="h-fit w-[48vw] ">
@@ -20,6 +21,23 @@ const FAQitem = ({ isOpen, faq, onClick }) => (
 );
 
 function Contact() {
+  const [name, setName] = useState("");
+  const [emailerror, setEmailerror] = useState(false);
+  const [error, setError] = useState(false);
+  const [email, setEmail] = useState("");
+  const ValidateEmail = (email) => {
+    const emailpattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailpattern.test(email);
+  };
+  const sendMessage = (e) => {
+    // e.preventDefault();
+    if (!ValidateEmail(email)) {
+      setEmailerror(true);
+    }
+    if (name.length < 5) {
+      setError(true);
+    }
+  };
   const [openIndex, setOpenindex] = useState(null);
   const handleToggle = (index) => {
     setOpenindex(openIndex === index ? null : index);
@@ -58,26 +76,57 @@ function Contact() {
           <div className="h-full w-1/2 flex items-center justify-center">
             <div className="h-full w-full flex items-center justify-center rounded-xl bg-gray-400 gap-3">
               <div className="w-[43vw] h-[90vh] grid ">
-                <p className="font-bold text-2xl">Name</p>
-                <input
-                  className="w-[43vw] h-[10vh] border-[1px] border-gray-300 rounded-md p-4"
-                  type="text"
-                  placeholder="Enter your name"
-                />
-                <p className="font-bold text-2xl">Email Address</p>
-                <input
-                  className="w-[43vw] h-[10vh] border-[1px] border-gray-300 rounded-md p-4"
-                  type="text"
-                  placeholder="Enter your email"
-                />
+                <div>
+                  {" "}
+                  <p className="font-bold text-2xl">Name</p>
+                  <input
+                    className="w-[43vw] h-[10vh] border-[1px] border-gray-300 rounded-md p-4"
+                    type="text"
+                    placeholder="Enter your name"
+                    value={name}
+                    onChange={(event) => {
+                      setName(event.target.value);
+                      setError(false);
+                    }}
+                    required
+                  />
+                  {error && (
+                    <p className="text-sm text-red-600">
+                      name must be atleast 5 characters long
+                    </p>
+                  )}
+                </div>
+                <div className="">
+                  <p className="font-bold text-2xl h-[8vh]">Email Address</p>
+                  <input
+                    className="w-[43vw] h-[10vh] border-[1px] border-gray-300 rounded-md p-4"
+                    type="text"
+                    value={email}
+                    onChange={(event) => {
+                      setEmail(event.target.value);
+                      setEmailerror(false);
+                    }}
+                    placeholder="Enter your email"
+                    required
+                  />
+                  {emailerror && (
+                    <p className="text-sm text-red-600">
+                      Invalid email address
+                    </p>
+                  )}
+                </div>
                 <p className="font-bold text-2xl">Leave a Message</p>
                 <textarea
                   className="w-[43vw] h-[25vh] border-[1px] border-gray-300 rounded-md p-4"
                   type="text"
                   placeholder="Message"
+                  required
                 />
                 <div className="flex items-center justify-end">
-                  <button className="w-[15vw] h-[8vh] text-white bg-green-700 rounded-md">
+                  <button
+                    onClick={sendMessage}
+                    className="w-[15vw] h-[8vh] text-white bg-green-700 rounded-md"
+                  >
                     Send Message
                   </button>
                 </div>

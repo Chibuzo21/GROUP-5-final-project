@@ -4,17 +4,25 @@ import { BiVideoPlus } from "react-icons/bi";
 import Old from "/old.jpg";
 import { IoMdCheckmark } from "react-icons/io";
 import Footer from "../Components/Footer";
+import { FiShare } from "react-icons/fi";
+import { GoThumbsup } from "react-icons/go";
+import { MdOutlinePrint } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
 
-function Video() {
+function Payment() {
   const [showMark, setShowmark] = useState(false);
+  const [alert, setAlert] = useState(false);
   const icon = () => {
     setShowmark(!showMark);
   };
   const navigate = useNavigate();
   return (
     <>
-      <main className="h-full">
+      <main
+        className={`  ${
+          alert ? "overflow-y-hidden h-[88vh] fixed" : "overflow-visible h-full"
+        }`}
+      >
         <Header />
         <section className="w-full h-[354px] bg-[#D1E8D0] flex items-center justify-center ">
           <div className="  grid justify-items-center">
@@ -113,7 +121,7 @@ function Video() {
                     <button
                       onClick={() => {
                         setTimeout(() => {
-                          navigate("/Pay");
+                          setAlert(true);
                         }, 1000);
                       }}
                       className="bg-[#16A362] text-xl font-medium
@@ -128,9 +136,72 @@ function Video() {
           </section>
         </section>
         <Footer />
+        {alert && (
+          <section className=" w-screen fixed z-50 top-0 h-screen bg-black/80 flex justify-center items-center">
+            <section className="w-[64vw] flex justify-center items-center flex-col h-[89vh] bg-[#EDF2E8] rounded-xl shadow-lg">
+              <div className="h-[68vh]">
+                <div className="flex flex-col w-full  h-[49vh] ">
+                  <h2 className="text-4xl font-semibold mb-4 text-center">
+                    Thank You for Your Payment!
+                  </h2>
+                  <div className="flex justify-center mb-4">
+                    <GoThumbsup className="text-[#206E30] text-xl h-[80px] w-[90px]" />
+                  </div>
+                  <p className="font-inter text-md font-medium leading-[18px] text-center mb-2">
+                    Your payment has been successfully processed. You are now
+                    ready to start your video consultation.
+                  </p>
+
+                  <div className="flex justify-center mt-5">
+                    <button
+                      type="button"
+                      name="start-video-call"
+                      onClick={() => {
+                        setTimeout(() => {
+                          navigate("/Chat");
+                        }, 1000);
+                      }}
+                      className="bg-[#16A362] hover:bg-green-700 text-white text-md
+                       font-bold py-4 px-7 rounded-lg cursor-pointer"
+                    >
+                      Start Virtual Consultation
+                    </button>
+                  </div>
+                </div>
+
+                <div className="  w-[100vw] grid content-center justify-items-center">
+                  <div className="font-medium">
+                    <p className="text-black w-[49vw] h-[8vh] text-lg ">
+                      <span className="text-[#206E30] ">Support:</span> If you
+                      have any questions or encounter any issues, please contact
+                      our support team at:
+                    </p>
+                    <p className="text-[#206E30] w-[50vw] text-lg ">
+                      Customer Support: support@carekonect.com
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="text-[#206E30] flex justify-between items-center text-xl w-[55vw] font-medium">
+                <p className="flex items-center w-[5vw] justify-between">
+                  <span>
+                    <MdOutlinePrint />
+                  </span>
+                  Print
+                </p>
+                <p className="flex w-[5vw] justify-between items-center">
+                  <span>
+                    <FiShare />
+                  </span>
+                  Share
+                </p>
+              </div>
+            </section>
+          </section>
+        )}
       </main>
     </>
   );
 }
 
-export default Video;
+export default Payment;

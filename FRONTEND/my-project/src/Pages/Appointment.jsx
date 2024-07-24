@@ -5,22 +5,25 @@ import { IoIosArrowDown } from "react-icons/io";
 import Phone from "/phone.svg";
 import MyClock from "../Clock";
 import MyCalendar from "../Calendar";
+import Success from "/success.png";
 
 import { MdOutlineChat } from "react-icons/md";
 import { BiVideoPlus } from "react-icons/bi";
 import { useNavigate } from "react-router-dom";
+import Header from "../Components/Header";
 
 function Appointment() {
   const navigate = useNavigate();
   const [visible, setVisible] = useState("");
   const [active, setActive] = useState(null);
   const [bg, setbg] = useState("");
+  const [alert, setAlert] = useState(false);
   const [BtnText, setBtnText] = useState(false);
   const Book = () => {
     setbg("opacity-60");
     setBtnText(true);
     setTimeout(() => {
-      navigate("/Successful");
+      setAlert(true);
     }, 2000);
   };
   const onclick = (index) => {
@@ -30,14 +33,18 @@ function Appointment() {
     setVisible("hidden");
   };
   const videoclick = () => {
-    navigate("/Video");
+    navigate("/Payment");
   };
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [navigate]);
   return (
     <>
-      <main className="w-full h-full ">
+      <main
+        className={`w-full grid content-center justify-items-center  ${
+          alert ? "overflow-y-hidden h-[88vh] fixed" : "overflow-visible h-full"
+        }`}
+      >
         <section className="w-full h-[354px] bg-[#D1E8D0] flex items-center justify-center ">
           <div className="h-[45vh]  grid justify-items-center">
             <h1 className="text-[72px] font-semibold h-[18vh]">
@@ -177,6 +184,24 @@ function Appointment() {
             </div>
           </div>
         </section>
+        {alert && (
+          <section
+            onClick={() => {
+              setAlert(false);
+              setBtnText(false);
+              setbg("opacity-100");
+            }}
+            className=" w-screen fixed z-50 top-0 h-screen bg-black/80 flex justify-center items-center"
+          >
+            <div
+              src={Success}
+              className=" h-[75vh] leading-[40px] text-3xl font-medium flex flex-col justify-center items-center text-[#206E30] w-[62vw] shadow-xl rounded-xl bg-gray-300 cursor-pointer "
+            >
+              <p>You've succesfully booked your appointment.</p>
+              <p>Please proceed to the hospital without delay.</p>
+            </div>
+          </section>
+        )}
       </main>
     </>
   );

@@ -11,7 +11,7 @@ function Books({ error, setError }) {
 
   const handleclick = () => {
     setBtnText(true);
-    if (nameWidth === "w-0") {
+    if (nameWidth === "hidden") {
       setTimeout(() => {
         setError(true);
         setBtnText(false);
@@ -35,7 +35,8 @@ function Books({ error, setError }) {
   return (
     <>
       <main
-        className="sm:h-[640px] h-[87vh] relative bg-cover bg-center w-screen grid content-center justify-items-center"
+        className="lg:h-[640px] h-[87vh] relative bg-cover bg-center w-screen grid 
+        content-center justify-items-center"
         style={{
           backgroundImage: `linear-gradient(to top, rgba(0, 0, 0, 0.8) 0, 
     rgba(0, 0, 0, 0.9) 60%, rgba(0, 0, 0, 0.9) 100%),url(${Book})`,
@@ -43,21 +44,21 @@ function Books({ error, setError }) {
       >
         <section
           className="flex justify-center text-center items-center flex-col
-         sm:h-[295px] sm:gap-4 gap-7"
+         lg:h-[295px] h-[80vh] sm:gap-10 gap-5 lg:gap-6"
         >
-          <p className="sm:text-6xl text-4xl font-medium text-[#16A362]">
+          <p className="lg:text-6xl sm:text-[60px] text-4xl font-medium text-[#16A362]">
             Book Healthcare
           </p>
-          <p className="text-white sm:text-6xl text-4xl font-medium  ">
+          <p className="text-white sm:text-[60px] lg:text-6xl text-4xl font-medium  ">
             <span className="text-[#16A362]">Appointments</span> with Ease
           </p>
-          <p className="text-white sm:text-2xl text-lg font-normal sm:h-[8vh] h-[10vh]">
+          <p className="text-white leading-[40px] sm:text-[33px] lg:text-2xl text-lg font-normal sm:h-[8vh] h-[10vh]">
             Connecting you with the right healthcare professionals quickly and
             conveniently
           </p>
           <button
-            className="text-white w-[272px] h-[56px]  f
-        ont-bold sm:text-xl text-lg bg-[#16A362] disabled:opacity-50 rounded-md"
+            className="text-white w-[272px] h-[56px] sm:w-[472px] sm:h-[96px] sm:text-3xl
+             lg:w-[272px] lg:h-[56px]  font-bold lg:text-xl text-lg bg-[#16A362] disabled:opacity-50 rounded-md"
             disabled={btnText}
             onClick={handleclick}
           >
@@ -65,31 +66,41 @@ function Books({ error, setError }) {
           </button>
         </section>
         {error && (
-          <section className="w-screen h-screen flex justify-center items-center fixed bg-black/60 z-50 top-0">
+          <section
+            className="w-screen h-screen 
+          flex justify-center items-center fixed bg-black/60 z-50 top-0"
+          >
             <section
               className="bg-gray-300 flex justify-center items-center flex-col 
-      sm:h-[475px] h-[460px] rounded-3xl sm:w-[843px] w-[360px] font-semibold z-40 shadow-xl
-        bottom-28  sm:text-[19px] text-[18px] "
+      lg:h-[475px] h-[460px] rounded-3xl lg:w-[843px] w-[360px] font-semibold 
+      z-40 shadow-xl sm:h-[70vh] sm:w-[90vw]
+        bottom-28  lg:text-[19px] text-[18px] sm:text-[28px] "
             >
-              <div className="sm:h-[20vh] h-[15vh]">
+              <div className="lg:h-[20vh] sm:h-[22vh] h-[15vh]">
                 <span
-                  className="sm:w-[90.35px] w-[70px] h-[70px] sm:h-[90.35px] text-[#D02F2F] 
-                  sm:text-7xl text-5xl bg-gray-200 rounded-full 
-        flex items-center justify-center cursor-pointer"
+                  className="lg:w-[90.35px] w-[70px] h-[70px] lg:h-[90.35px] text-[#D02F2F] 
+                  lg:text-7xl sm:text-8xl text-5xl bg-gray-200 rounded-full sm:h-[140px]
+sm:w-[140px]        flex items-center justify-center cursor-pointer"
                   onClick={cancel}
                 >
                   <RxCross2 />
                 </span>
               </div>
-              <p className="h-[6vh]">Oops, You Are Not Logged In!</p>
-              <p className="text-gray-600 sm:w-[719px] w-[323px] text-center h-[25vh] sm:h-[20vh]">
+              <p className="h-[6vh] lg:h-[6vh] sm:h-[8vh] ">
+                Oops, You Are Not Logged In!
+              </p>
+              <p
+                className="text-gray-600 sm:w-[570px] lg:w-[719px] w-[323px] 
+              text-center sm:h-[27vh] h-[25vh] lg:h-[20vh]"
+              >
                 To book an appointment, Please sign up or log in to your
                 CareKonect account. This helps us provide you with personalized
                 healthcare services and ensure a seamless booking experience.{" "}
               </p>
               <button
                 onClick={Logbtn}
-                className={`h-[41.42px] w-[202.83px] bg-[#16A362] text-sm
+                className={`h-[41.42px] w-[202.83px] lg:h-[41.42px] sm:h-[7vh] sm:w-[40vw] 
+                  lg:w-[202.83px] bg-[#16A362] text-sm lg:text-sm sm:text-xl
          text-white ${bg}`}
               >
                 SIGN UP

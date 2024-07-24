@@ -7,12 +7,15 @@ import vector from "../assets/Vector.svg";
 function Provide() {
   return (
     <main
-      className="w-[1440px] h-[922px] flex justify-center items-center 
+      className="lg:w-[1440px] w-[100vw] lg:h-[922px] h-[200vh] flex justify-center
+       items-center sm:h-[335vh]
  bg-gradient-to-b from-white to-[#EFF4F3]"
     >
-      <section>
-        <p className="font-bold text-[32px] h-[13vh] text-center">WE PROVIDE</p>
-        <section className="grid grid-cols-2 gap-8">
+      <section className="h-[190vh] lg:h-fit sm:h-full">
+        <p className="font-bold lg:text-[32px] sm:text-[52px]  text-[32px] sm:h-[13vh] h-[10vh] text-center">
+          WE PROVIDE
+        </p>
+        <section className="grid lg:grid-cols-2 gap-8 lg:gap-8 sm:gap-0">
           <Props
             title="TELEMEDICINE"
             icon={image}
@@ -36,7 +39,7 @@ real-time slots and instant confirmations."
             title="HEALTH RECORDS"
             icon={image}
             text="
-CareKonect: Securely manage, access , and share your health records."
+CareKonect: Securely manage, access, and share your health records."
           />
         </section>
       </section>

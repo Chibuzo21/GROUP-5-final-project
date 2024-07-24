@@ -56,6 +56,10 @@ function Header() {
 
           <NavLink to="/">Home</NavLink>
           <NavLink to="/About">About</NavLink>
+          <div className={`${nameWidth}`}>
+            <NavLink to="/Payment">Virtual Consultation</NavLink>
+          </div>
+
           <NavLink to="/Carekonect">CareKonect For Doctors</NavLink>
           <NavLink to="/Contact">Contact us</NavLink>
 

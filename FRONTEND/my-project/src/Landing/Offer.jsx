@@ -7,12 +7,17 @@ import Props from "./OfferProps";
 function Offer() {
   return (
     <main
-      className="sm:h-[75vh] h-[88vh] w-[100vw] 
+      className="lg:h-[75vh] sm:h-[160vh] h-[130vh] w-[100vw] items-center
    bg-gradient-to-b from-[#5DD9A0] via-[#42A96E] to-[#206E30]
-    flex flex-col gap-14 p-16 "
+    flex flex-col sm:gap-14 gap-8 sm:p-16 p-7"
     >
-      <strong className="sm:text-5xl text-3xl text-left">What We Offer</strong>
-      <section className="flex flex-col sm:flex-row gap-16 sm:w-[90vw] justify-center">
+      <strong className="sm:text-5xl text-[32px] sm:text-left text-center">
+        What We Offer
+      </strong>
+      <section
+        className="flex
+       flex-col lg:flex-row lg:gap-16 gap-7 lg:w-[90vw] justify-center"
+      >
         <Props
           title="ALL YOUR HEALTHCARE NEEDS"
           text="Search for and book a doctor's appointment,either in-clinic, or a teleconsultation"
