@@ -6,16 +6,19 @@ import Props from "./Userprops";
 function Users() {
   return (
     <>
-      <main className="lg:h-[90vh] sm:h-[100vh] h-[150vh] w-screen flex justify-center items-center">
-        <section className="h-[1002px] lg:w-fit sm:overflow-x-auto  sm:h-[700px] lg:h-[515px] w-[1239px] bg-gray-200">
-          <div className="sm:h-[364px] h-[950px]  sm:w-[300vw] lg:w-fit  w-[1192px] flex flex-col justify-center items-center ">
-            <p className="lg:text-[36px] sm:text-[52px] text-[22px] font-bold  sm:h-[12vh] h-[10vh]">
+      <main className=" w-screen flex justify-center items-center h-full">
+        <section
+          className="w-full xl:w-11/12 h-4/5 py-10 flex sm:py-15 flex-col items-center
+         bg-gray-200"
+        >
+          <div className="   flex flex-col justify-center items-center ">
+            <p className="lg:text-[36px] sm:text-[32px] text-[22px] font-bold mb-7 ">
               WHAT OUR USERS SAY
             </p>
             <div
-              className="flex sm:flex-row sm:w-[240vw] lg:w-[1192px]
-              justify-between sm:items-start items-center flex-col sm:justify-evenly
-             h-[107vh] w-[1192px] sm:h-[19vh] "
+              className="flex md:flex-row xl:gap-7 lg:gap-3 md:gap-2 gap-12 
+              justify-between md:items-start items-center flex-col sm:justify-between
+      "
             >
               <Props
                 text="CareKonect made booking my doctor's appointment so easy and stress free. 
@@ -25,27 +28,26 @@ I found the perfect specialist in minutes"
                 job="HR Manager"
               />
               <section
-                className="lg:w-[357px] w-[350px] flex flex-col justify-center
-                 items-center sm:w-[72vw] sm:h-[38vh]
-                 lg:h-[264.84px] h-[230px]
+                className=" flex flex-col justify-center px-3 py-4
+                 items-center lg:py-6 lg:px-2 xl:px-5 md:py-7 md:px-2 
          bg-white  relative rounded-lg chief shadow-sm"
               >
-                <div className=" lg:h-[200.84px] sm:h-[30vh] h-[168px] sm:w-fit w-[80vw]">
+                <div className=" ">
                   <p
-                    className="lg:text-[20px] text-[18px] lg:leading-[32px] h-[120px]
-                     lg:h-[148px] sm:h-[23vh]
-                   lg:w-[320px] sm:w-[60vw] w-[330px] sm:text-[30px] sm:leading-[43px]  "
+                    className="lg:text-[20px] md:max-w-[220px] text-[18px] lg:leading-[32px] 
+                    lg:max-w-[318px] w-[70vw] mb-4
+                    md:text-[16px] md:mb-3 sm:w-[60vw] sm:mb-5 "
                   >
                     Using CareKonect has streamlined my appointment scheduling
                     process, allowing me to focus more on patient care
                   </p>
-                  <div className="flex h-[45.04px] sm:w-[39vw] lg:w-[15vw] w-[46vw] justify-between items-center">
+                  <div className="flex w-[56%] sm:w-[68%] md:w-[73%] justify-between items-center">
                     <img
                       src={Suit}
                       alt=""
-                      className="lg:w-[45.04px] lg:h-[45.04px] sm:h-[70px] sm:w-[70px]  w-[44px] h-[44px]"
+                      className="lg:w-[45.04px] lg:h-[45.04px] md:h-[45px] md:w-[45px]  w-[44px] h-[44px]"
                     />
-                    <div className="sm:text-2xl lg:text-lg text-sm">
+                    <div className="md:text-sm lg:text-lg text-sm">
                       <p className="text-[#5DD9A0]">Dr. John M.</p>
                       <p>General Practitioner</p>
                     </div>

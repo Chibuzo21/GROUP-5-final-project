@@ -7,63 +7,59 @@ import Doctors from "../assets/doctors.jpg";
 function Mission() {
   return (
     <main
-      className="flex lg:flex-row sm:flex-col-reverse flex-col-reverse 
-     lg:h-[130vh] sm:h-[340vh] h-[260vh] w-screen justify-center items-center"
+      className="flex md:flex-row py-9 md:py-10 h-full flex-col-reverse 
+    w-screen justify-center items-center"
     >
       <section
-        className="flex h-fit flex-col sm:w-[97vw] justify-center items-center
-       lg:flex-row lg:gap-5 gap-0 lg:w-[47vw] w-[80vw] "
+        className="flex  flex-col  justify-center items-center
+       sm:flex-row md:gap-5 sm:gap-1  px-6 md:w-2/4 lg:w-2/4  "
       >
-        <div className="flex flex-col lg:gap-5 gap-5 relative ">
+        <div className="flex flex-col md:gap-5  gap-5  ">
           <img
             src={Hands}
             alt=""
-            className="lg:w-[264px] sm:w-[630px] w-[380px] h-[316px] sm:h-[526px] lg:h-[316px]"
+            className="w-3/4 md:w-full lg:w-[253px] h-auto mx-auto "
           />
           <img
             src={Doctors}
             alt=""
-            className="lg:w-[263px] sm:w-[630px] w-[380px] h-[316px] sm:h-[526px] lg:h-[316px]"
+            className="w-3/4 md:w-full lg:w-[253px] h-auto mx-auto"
           />
         </div>
         <div className="flex flex-col gap-6 pt-12">
           <img
             src={Doc}
             alt=""
-            className="lg:w-[264px] sm:w-[630px] w-[380px] h-[316px] sm:h-[526px] lg:h-[316px]"
+            className="w-3/4 md:w-full lg:w-[253px] h-auto mx-auto"
           />
           <img
             src={Four}
             alt=""
-            className="lg:w-[264px] sm:w-[630px] w-[380px] h-[316px] sm:h-[526px] lg:h-[316px]"
+            className="w-3/4 md:w-full lg:w-[253px] h-auto mx-auto"
           />
         </div>
       </section>
       <section
-        className="lg:w-[45.1vw]
-       w-[90vw] flex flex-col justify-center sm:h-[200vh]
-        items-center lg:items-start h-[120vh] lg:h-fit"
+        className="   md:w-2/5 text-center xl:px-0 md:text-start
+       flex flex-col justify-center  w-11/12 px-1 md:px-4  md:pt-8
+        items-center lg:items-start"
       >
-        <p
-          className="lg:text-4xl sm:h-[10vh] h-[9vh] sm:text-[52px] 
-        text-2xl text-center sm:text-start font-bold"
-        >
+        <p className="xl:text-4xl text-2xl  lg:text-3xl xl:mb-4 mb-2  font-bold">
           OUR MISSION
         </p>
 
         <p
-          className="sm:text-4xl 
-           text-xl text-center lg:text-start sm:h-[12vh] lg:w-fit
-            font-semibold text-[#206E30] h-[10vh] lg:h-[14vh] sm:w-[80vw] "
+          className="xl:text-4xl lg:text-2xl sm:text-2xl 
+           text-2xl text-center lg:text-start mb-2
+            font-semibold text-[#206E30] xl:mb-4   "
         >
           CareKonect: Connecting You to Better Health
         </p>
 
         <p
-          className="sm:text-3xl lg:text-start text-[17px] 
-           text-gray-800 w-[360px] text-center lg:text-[20px]
-          sm:w-[729px] lg:h-[256px] h-[320px] sm:h-[50vh] lg:leading-[32px] lg:w-[629px]
-         sm:leading-[45px] leading-[26px]"
+          className="text-base  md:text-base mb-6 md:leading-[20px] lg:text-[20px]
+           lg:leading-[32px] 
+         "
         >
           At CareKonect, our mission is to simplify and enhance healthcare
           access for everyone. We strive to connect patients with healthcare
@@ -74,8 +70,8 @@ function Mission() {
           fostering a healthier and more connected community.
         </p>
         <button
-          className="lg:w-[21vw] w-[63vw] rounded-md bg-[#206E30] text-xl lg:text-xl font-medium
-           text-white lg:h-[9vh] h-[7vh] sm:h-[10vh] sm:w-[60vw] sm:text-[35px] "
+          className=" rounded-md bg-[#206E30] text-xl lg:text-xl font-medium
+           text-white  md:text-base py-3 px-16 mb-4 "
         >
           Learn More
         </button>

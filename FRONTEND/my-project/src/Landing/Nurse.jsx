@@ -13,61 +13,86 @@ function Nurse() {
   const navigate = useNavigate();
   return (
     <>
-      <main className="lg:h-[110vh] h-[110vh] sm:h-[160vh] w-full  ">
+      <main className="h-full py-8 md:py-12 w-[100%]  ">
         <div
-          className="lg:h-[30vh] sm:h-[20vh]
-        lg:overflow-x-hidden h-0 justify-start 
-        sm:overflow-x-auto flex sm:w-[95vw] w-0 flex-row gap-3"
+          className=" no-scrollbar
+        xl:overflow-x-hidden  justify-start items-center lg:justify-center
+        overflow-x-auto flex    flex-row "
         >
-          <img src={Gosab} alt="" className="lg:w-[13vw] lg:h-[22vh] " />
-          <img src={Drug} alt="" className="lg:h-[19vh]" />
-          <img src={Medicare} alt="" className="lg:h-[22vh]" />
-          <img src={Stork} alt="" className="lg:h-[22vh]" />
-          <img src={Otema} alt="" className="lg:h-[20vh]" />
-          <img src={Med} alt="" className="h-[19vh]" />
-          <img src={Alvisdra} alt="" className="lg:h-[23vh]" />
+          <img
+            src={Gosab}
+            alt=""
+            className="sm:h-[22vh] h-1/3 w-1/3  sm:w-auto"
+          />
+          <img
+            src={Drug}
+            alt=""
+            className="sm:h-[19vh] h-1/3 w-1/3  sm:w-auto"
+          />
+          <img
+            src={Medicare}
+            alt=""
+            className="sm:h-[22vh] h-1/3 w-1/3  sm:w-auto"
+          />
+          <img
+            src={Stork}
+            alt=""
+            className="sm:h-[22vh] h-1/3 w-1/3  sm:w-auto"
+          />
+          <img
+            src={Otema}
+            alt=""
+            className="sm:h-[20vh] h-1/4 w-1/4   sm:w-auto"
+          />
+          <img
+            src={Med}
+            alt=""
+            className="sm:h-[19vh] h-1/5 w-1/5   sm:w-auto"
+          />
+          <img
+            src={Alvisdra}
+            alt=""
+            className="sm:h-[20vh] h-1/3 w-1/3  sm:w-auto"
+          />
           <img
             src={FMC}
             alt=""
-            className="lg:h-[14vh] sm:h-[15vh] lg:pt-10 lg:w-[14vw] sm:pt-10"
+            className=" sm:h-[13vh]  lg:w-[14vw]  h-1/3 w-1/3 "
           />
         </div>
         <div
-          className="flex lg:flex-row flex-col lg:gap-2 gap-4 justify-center items-center 
-        lg:h-[50vh] sm:h-[140vh] sm:gap-0 h-[78vh]   w-screen lg:justify-evenly"
+          className="flex md:flex-row flex-col  justify-center items-center
+             "
         >
           <div
-            className="lg:w-[44vw] sm:w-[90vw] w-[98vw] flex flex-col sm:gap-9 gap-8 lg:gap-4
-            justify-center 0
-          lg:h-[50vh]  sm:h-[80vh] h-[55vh] items-center sm:items-center 
-           text-center lg:text-start"
+            className=" flex flex-col 
+            justify-center md:w-3/4 px-4 md:px-8 lg:px-16
+         items-center  
+           text-center lg:text-start lg:items-start"
           >
-            <p className="sm:text-[52px] lg:text-[32px] text-[26px] font-bold w-full">
+            <p className="sm:text-[28px] lg:text-[32px] text-[26px] font-bold mb-4">
               ABOUT US
             </p>
-            <p
-              className=" lg:text-[20px] sm:text-3xl sm:text-center lg:text-start
-            text-[19px] text-gray-700  w-[90vw] lg:w-fit sm:w-[90vw]"
-            >
+            <p className="text-base sm:text-lg md:text-xl mb-6  ">
               CareKonect simplifies health management with personalized advice,
               tailored recommendations, and 24/7 support for booking
               appointments and answering health questions. Enjoy a seamless,
               proactive, and secure healthcare experience with CareKonect.
             </p>
-            <div className="w-full">
+            <div className="">
               <button
                 onClick={() => {
                   navigate("/About");
                 }}
-                className="bg-[#206E30] rounded-md lg:text-[22.5px] text-[19px] sm:text-[35px]
-                font-semibold text-white lg:h-[63px] h-[58px] w-[270px] lg:w-[321.4px] sm:w-[60vw] sm:h-[10vh]"
+                className="bg-[#206E30] rounded-md 
+                  text-white py-5 mb-4 px-12 font-medium text-lg md:text-xl lg:text-2xl"
               >
                 Learn More
               </button>
             </div>
           </div>
-          <div className="lg:w-[34vw] sm:h-[70vh] lg:h-[30vh] w-[85vw] h-[10vh]">
-            <img src={girl} />
+          <div className="mt-8 md:mt-0">
+            <img src={girl} className="w-3/4 h-auto mx-auto " />
           </div>
         </div>
       </main>

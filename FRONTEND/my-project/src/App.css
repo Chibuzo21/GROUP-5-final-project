@@ -94,3 +94,11 @@ a.active {
     bottom: -37px;
   }
 }
+.no-scrollbar {
+  overflow-x: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}

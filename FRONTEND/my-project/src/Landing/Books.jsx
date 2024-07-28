@@ -35,7 +35,7 @@ function Books({ error, setError }) {
   return (
     <>
       <main
-        className="lg:h-[640px] h-[87vh] relative bg-cover bg-center w-screen grid 
+        className="py-8 md:py-12 h-screen relative bg-cover bg-center w-screen grid 
         content-center justify-items-center"
         style={{
           backgroundImage: `linear-gradient(to top, rgba(0, 0, 0, 0.8) 0, 
@@ -44,21 +44,24 @@ function Books({ error, setError }) {
       >
         <section
           className="flex justify-center text-center items-center flex-col
-         lg:h-[295px] h-[80vh] sm:gap-10 gap-5 lg:gap-6"
+          md:gap-5 gap-5 lg:gap-6"
         >
-          <p className="lg:text-6xl sm:text-[60px] text-4xl font-medium text-[#16A362]">
+          <p className="lg:text-6xl md:text-5xl text-4xl font-medium text-[#16A362]">
             Book Healthcare
           </p>
-          <p className="text-white sm:text-[60px] lg:text-6xl text-4xl font-medium  ">
+          <p className="text-white md:text-5xl lg:text-6xl text-4xl font-medium  ">
             <span className="text-[#16A362]">Appointments</span> with Ease
           </p>
-          <p className="text-white leading-[40px] sm:text-[33px] lg:text-2xl text-lg font-normal sm:h-[8vh] h-[10vh]">
+          <p
+            className="text-white ] 
+          md:text-xl lg:text-2xl text-lg font-normal sm:h-[8vh] w-[80%] mb-2"
+          >
             Connecting you with the right healthcare professionals quickly and
             conveniently
           </p>
           <button
-            className="text-white w-[272px] h-[56px] sm:w-[472px] sm:h-[96px] sm:text-3xl
-             lg:w-[272px] lg:h-[56px]  font-bold lg:text-xl text-lg bg-[#16A362] disabled:opacity-50 rounded-md"
+            className="text-white py-4 px-6 md:text-lg
+               font-bold lg:text-xl text-lg bg-[#16A362] disabled:opacity-50 rounded-md"
             disabled={btnText}
             onClick={handleclick}
           >

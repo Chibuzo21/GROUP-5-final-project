@@ -7,11 +7,11 @@ import vector from "../assets/Vector.svg";
 function Provide() {
   return (
     <main
-      className="lg:w-[1440px] w-[100vw] lg:h-[922px] h-[200vh] flex justify-center
-       items-center sm:h-[335vh]
+      className=" flex justify-center
+       items-center 
  bg-gradient-to-b from-white to-[#EFF4F3]"
     >
-      <section className="h-[190vh] lg:h-fit sm:h-full">
+      <section className="">
         <p className="font-bold lg:text-[32px] sm:text-[52px]  text-[32px] sm:h-[13vh] h-[10vh] text-center">
           WE PROVIDE
         </p>

@@ -7,16 +7,16 @@ import Props from "./OfferProps";
 function Offer() {
   return (
     <main
-      className="lg:h-[75vh] sm:h-[160vh] h-[130vh] w-[100vw] items-center
+      className="  items-center 
    bg-gradient-to-b from-[#5DD9A0] via-[#42A96E] to-[#206E30]
-    flex flex-col sm:gap-14 gap-8 sm:p-16 p-7"
+    flex flex-col md:gap-14 gap-8 sm:py-12 p-7"
     >
-      <strong className="sm:text-5xl text-[32px] sm:text-left text-center">
+      <strong className="sm:text-3xl text-[32px] sm:text-left  text-center">
         What We Offer
       </strong>
       <section
-        className="flex
-       flex-col lg:flex-row lg:gap-16 gap-7 lg:w-[90vw] justify-center"
+        className="flex items-center
+       flex-col md:flex-row lg:gap-5  xl:gap-16 gap-5  justify-center"
       >
         <Props
           title="ALL YOUR HEALTHCARE NEEDS"
