@@ -63,7 +63,7 @@ a.active {
   justify-content: space-between;
 }
 .myclock .react-time-picker__inputGroup__input {
-  width: 5vw;
+  width: 3vw;
   border: none;
   font-size: px;
   text-align: center;

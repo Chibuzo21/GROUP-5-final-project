@@ -13,6 +13,7 @@ function Header() {
   const { nameWidth, setNamewidth } = useContext(Context);
   const { logo, setLogo } = useContext(Context);
   const { Navwidth, setnavwidth } = useContext(Context);
+  const { logout, setLogout } = useContext(Context);
 
   const [togglemenu, settogglemenu] = useState("h-0");
   useEffect(() => {
@@ -53,16 +54,12 @@ function Header() {
           <p className={`${nameWidth} text-gray-700 font-semibold italic`}>
             {name}
           </p>
-
           <NavLink to="/">Home</NavLink>
           <NavLink to="/About">About</NavLink>
           <div className={`${nameWidth}`}>
             <NavLink to="/Payment">Virtual Consultation</NavLink>
           </div>
-
-          <NavLink to="/Carekonect">CareKonect For Doctors</NavLink>
           <NavLink to="/Contact">Contact us</NavLink>
-
           <div
             className={`${Navwidth} sm:flex-row flex-col sm:gap-0 gap-8 flex 
             justify-between items-center sm:text-[16px] text-[18px] 
@@ -97,6 +94,19 @@ function Header() {
                 </button>
               </NavLink>
             )}
+          </div>
+          <div className={`${nameWidth}`}>
+            <NavLink>
+              {" "}
+              <button
+                onClick={() => {
+                  setLogout(true);
+                }}
+                className="py-2 px-5 text-white bg-red-500 border-red-500 border-[1px] rounded-md"
+              >
+                Log out
+              </button>
+            </NavLink>
           </div>
         </div>
         <button

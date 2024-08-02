@@ -5,30 +5,30 @@ function Props({ title, text, icon }) {
     <main>
       <div
         className="flex flex-col  items-center justify-center 
-      w-[70vw] lg:w-[27vw] lg:h-[53vh] h-[40vh] sm:h-[76vh] sm:w-full"
+      "
       >
         <div
-          className="lg:h-[86px] lg:w-[86px] h-[55px] w-[55px] sm:h-[15vh] sm:w-[18vw]  
-        lg:text-5xl text-[#206E30] sm:text-7xl flex justify-center items-center
+          className="lg:h-[66px] lg:w-[66px] h-[55px] w-[55px] md:h-[8vh] md:w-[10vw]  
+        lg:text-2xl text-[#206E30] md:text-3xl flex justify-center items-center
          bg-[#BDF7C9] rounded-full relative top-5  z-10"
         >
-          <img src={icon} className="lg:w-fit lg:h-fit w-[8vw] h-[7vh]" />
+          <img src={icon} className="h-1/2 " />
         </div>
         <div
-          className="lg:w-[339px] w-[320px] lg:h-[272px] h-[230px] bg-white
-         shadow-xl flex flex-col justify-center items-center sm:w-[85vw] sm:h-[50vh]"
+          className="bg-white
+         shadow-xl flex flex-col justify-center items-center "
         >
           <div
-            className="w-[291px] lg:w-[291px] sm:h-[23vh] sm:w-[691px] lg:h-[110px] 
-          h-[17vh] grid justify-items-center"
+            className=" py-12 xl:px-9 lg:px-9 md:px-8 px-3
+          grid justify-items-center"
           >
-            <p className="text-[20px] sm:text-[40px] lg:text-[20px] font-semibold">
+            <p className="text-[20px] md:text-[17px] lg:text-[20px] mb-3 font-semibold">
               {title}
             </p>
             <p
-              className="lg:w-[15vw] w-[60vw] h-[72px] text-[#343A40]
-               text-[18px] lg:text-[16px] sm:text-[30px] sm:w-[60vw]
-               leading-[24px] sm:leading-[44px] lg:leading-[24px] lg:h-[72px] sm:h-[10vh]
+              className=" text-[#343A40] md:text-[16px] max-w-[65vw]
+               text-[16px] lg:text-[16px] md:max-w-[36vw] lg:max-w-[22vw] lg:max-h-[11vh]
+               leading-[24px] md:leading-[30px] lg:leading-[26px] mb-5 md:max-h-[10vh]
          text-center"
             >
               {text}

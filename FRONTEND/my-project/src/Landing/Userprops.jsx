@@ -14,7 +14,7 @@ function Props({ text, name, image, job }) {
           >
             {text}
           </p>
-          <div className="flex sm:w-[30%] w-[38%] md:w-[53%] justify-between items-center">
+          <div className="flex  w-[37%] sm:w-[35%] md:w-[62%] lg:w-[68%] justify-between items-center">
             <img
               src={image}
               alt=""

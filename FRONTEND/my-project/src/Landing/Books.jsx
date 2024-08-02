@@ -60,7 +60,7 @@ function Books({ error, setError }) {
             conveniently
           </p>
           <button
-            className="text-white py-4 px-6 md:text-lg
+            className="text-white py-4 md:px-0 px-8 md:text-lg md:min-w-[20vw]
                font-bold lg:text-xl text-lg bg-[#16A362] disabled:opacity-50 rounded-md"
             disabled={btnText}
             onClick={handleclick}
@@ -75,7 +75,7 @@ function Books({ error, setError }) {
           >
             <section
               className="bg-gray-300 flex justify-center items-center flex-col 
-      lg:h-[475px] h-[460px] rounded-3xl lg:w-[843px] w-[360px] font-semibold 
+      lg:h-[475px] h-[420px] rounded-3xl lg:w-[843px] w-[390px] font-semibold 
       z-40 shadow-xl sm:h-[70vh] sm:w-[90vw]
         bottom-28  lg:text-[19px] text-[18px] sm:text-[28px] "
             >

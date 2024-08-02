@@ -10,7 +10,7 @@ import "./App.css";
 import { useState } from "react";
 import { Context } from "./Context";
 
-import Appointment from "./Pages/Appointment";
+import Appointment from "./Pages/Appointment/Appointment";
 import Payment from "./Pages/Payment";
 import Chat from "./Pages/Chat";
 import John from "./Pages/Privatechats/John";
@@ -28,6 +28,7 @@ function App() {
   const [nameWidth, setNamewidth] = useState("hidden");
   const [width, setWidth] = useState("sm:w-[72vw] w-full");
   const [Navwidth, setnavwidth] = useState("w-[270px]");
+  const [logout, setLogout] = useState(false);
 
   const [logo, setLogo] = useState("sm:w-[17vw] w-[35vw]");
 
@@ -48,6 +49,8 @@ function App() {
             setnavwidth,
             nameWidth,
             setNamewidth,
+            logout,
+            setLogout,
           }}
         >
           <Routes>

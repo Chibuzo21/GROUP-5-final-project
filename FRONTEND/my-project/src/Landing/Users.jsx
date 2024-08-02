@@ -6,9 +6,9 @@ import Props from "./Userprops";
 function Users() {
   return (
     <>
-      <main className=" w-screen flex justify-center items-center h-full">
+      <main className=" w-screen flex justify-center items-center h-[130%]">
         <section
-          className="w-full xl:w-11/12 h-4/5 py-10 flex sm:py-15 flex-col items-center
+          className="w-full xl:w-11/12 h-[100%] py-10 flex sm:py-10 flex-col items-center
          bg-gray-200"
         >
           <div className="   flex flex-col justify-center items-center ">
@@ -41,7 +41,7 @@ I found the perfect specialist in minutes"
                     Using CareKonect has streamlined my appointment scheduling
                     process, allowing me to focus more on patient care
                   </p>
-                  <div className="flex w-[56%] sm:w-[68%] md:w-[73%] justify-between items-center">
+                  <div className="flex w-[48%] sm:w-[46%] md:w-[82%] lg:w-[68%]  justify-between items-center">
                     <img
                       src={Suit}
                       alt=""

@@ -27,14 +27,14 @@ function Payment() {
       >
         <Header />
         <section
-          className="w-full bg-[#D1E8D0] flex items-center 
+          className=" bg-[#D1E8D0] flex items-center 
         justify-center py-8 md:py-12"
         >
           <div className="grid justify-items-center text-center">
             <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold">
               Video Call <span className="text-[#206E30]">Consultation</span>
             </h1>
-            <BiVideoPlus className="text-5xl sm:text-7xl md:text-8xl text-[#206E30] my-4" />
+            <BiVideoPlus className="text-5xl sm:text-7xl md:text-8xl text-[#206E30] my-2" />
             <p
               className="text-lg sm:text-xl md:text-2xl lg:text-3xl w-[80%]
              md:w-[60%] lg:w-[80%] mx-auto"
