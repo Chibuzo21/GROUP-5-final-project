@@ -12,7 +12,7 @@ function Login() {
   const { setViewnav } = useContext(Context);
   const { setName } = useContext(Context);
   const { setWidth } = useContext(Context);
-  const { setLogo } = useContext(Context);
+
   const { Navwidth, setnavwidth } = useContext(Context);
   const { setNamewidth } = useContext(Context);
   const [username, setusername] = useState("");
@@ -57,10 +57,10 @@ function Login() {
         navigate("/");
         setViewnav(true);
         setName(username);
-        setWidth("w-[78vw]");
-        setLogo(" w-[19vw]");
-        setnavwidth("w-0");
-        setNamewidth("w-fit");
+        setWidth("md:w-[78vw] md:flex hidden");
+
+        setnavwidth("hidden");
+        setNamewidth("flex");
       }, 600);
     }
   };
@@ -82,7 +82,7 @@ function Login() {
 
   return (
     <>
-      <Header />
+      {" "}
       <main
         className="grid md:flex w-full justify-center items-center md:h-full h-[188vh] 
     flex-row "

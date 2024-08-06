@@ -25,7 +25,6 @@ function Payment() {
             : "overflow-visible min-h-screen"
         }`}
       >
-        <Header />
         <section
           className=" bg-[#D1E8D0] flex items-center 
         justify-center py-8 md:py-12"
@@ -133,23 +132,23 @@ function Payment() {
             </div>
           </div>
         </section>
-        <Footer />
+
         {alert && (
           <section
-            className="fixed inset-0 z-50 bg-black bg-opacity-80 flex 
+            className="fixed top-10 z-50 bg-black bg-opacity-90 flex h-screen w-screen
           justify-center items-center"
           >
             <div
-              className="bg-[#EDF2E8] p-8 rounded-xl shadow-lg w-11/12 
+              className="bg-[#EDF2E8] sm:p-8 p-2 rounded-xl shadow-lg w-11/12 
             md:w-2/3 lg:w-1/2"
             >
-              <h2 className="text-4xl font-semibold text-center mb-4">
+              <h2 className="sm:text-4xl text-2xl font-semibold text-center mb-4">
                 Thank You for Your Payment!
               </h2>
               <div className="flex justify-center mb-4">
                 <GoThumbsup className="text-[#206E30] text-6xl" />
               </div>
-              <p className="text-center text-lg font-medium mb-4">
+              <p className="text-center sm:text-lg text-md font-medium mb-4">
                 Your payment has been successfully processed. You are now ready
                 to start your video consultation.
               </p>
@@ -162,7 +161,7 @@ function Payment() {
                   Start Virtual Consultation
                 </button>
               </div>
-              <div className="text-center text-lg">
+              <div className="text-center sm:text-lg text-md">
                 <p className="mb-2">
                   <span className="text-[#206E30]">Support:</span> If you have
                   any questions or encounter any issues, please contact our
@@ -172,7 +171,10 @@ function Payment() {
                   Customer Support: support@carekonect.com
                 </p>
               </div>
-              <div className="flex justify-between text-xl text-[#206E30] font-medium mt-8">
+              <div
+                className="flex justify-between sm:text-xl text-md text-[#206E30]
+               font-medium mt-8"
+              >
                 <p className="flex items-center">
                   <MdOutlinePrint className="mr-1" /> Print
                 </p>

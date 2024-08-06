@@ -88,10 +88,9 @@ function Signup() {
         navigate("/");
         setViewnav(true);
         setName(username);
-        setWidth("w-[78vw]");
-        setLogo(" w-[19vw]");
-        setnavwidth("w-0");
-        setNamewidth("w-fit ");
+        setWidth("md:w-[78vw]  md:flex hidden");
+        setnavwidth("hidden");
+        setNamewidth(true);
       }, 600);
     }
   };
@@ -117,7 +116,6 @@ function Signup() {
 
   return (
     <>
-      <Header />
       <div className="flex items-center justify-center w-full h-[88vh] ">
         <section className="flex items-center justify-center w-[580px]">
           <img

@@ -7,7 +7,7 @@ import Main from "./Components/Main";
 import { Routes, Route } from "react-router-dom";
 import Carekonect from "./Pages/Carekonect";
 import "./App.css";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Context } from "./Context";
 
 import Appointment from "./Pages/Appointment/Appointment";
@@ -26,11 +26,10 @@ function App() {
   const [viewNav, setViewnav] = useState(false);
   const [name, setName] = useState();
   const [nameWidth, setNamewidth] = useState("hidden");
-  const [width, setWidth] = useState("sm:w-[72vw] w-full");
-  const [Navwidth, setnavwidth] = useState("w-[270px]");
-  const [logout, setLogout] = useState(false);
-
-  const [logo, setLogo] = useState("sm:w-[17vw] w-[35vw]");
+  const [width, setWidth] = useState("lg:w-[60vw]  md:w-[60vw] md:flex hidden");
+  const [Navwidth, setnavwidth] = useState(
+    "w-[290px] sm:w-[189px] md:w-[190px] lg:w-[290px]"
+  );
 
   return (
     <>
@@ -43,14 +42,11 @@ function App() {
             setName,
             width,
             setWidth,
-            logo,
-            setLogo,
+
             Navwidth,
             setnavwidth,
             nameWidth,
             setNamewidth,
-            logout,
-            setLogout,
           }}
         >
           <Routes>
@@ -60,15 +56,15 @@ function App() {
               <Route path="/Carekonect" element={<Carekonect />} />
               <Route path="/Contact" element={<Contact />} />
               <Route path="/x" element={<Appointment />} />
+              <Route path="/Payment" element={<Payment />} />
+              <Route
+                path="/Login"
+                element={<Login viewNav={viewNav} setViewnav={setViewnav} />}
+              />
+              <Route path="/Signup" element={<Signup />} />
             </Route>
-            <Route
-              path="/Login"
-              element={<Login viewNav={viewNav} setViewnav={setViewnav} />}
-            />
 
-            <Route path="/Payment" element={<Payment />} />
             <Route path="/Chat" element={<Chat />} />
-            <Route path="/Signup" element={<Signup />} />
             <Route path="/Jane" element={<Jane />} />
             <Route path="/John" element={<John />} />
             <Route path="/Philip" element={<Philip />} />
