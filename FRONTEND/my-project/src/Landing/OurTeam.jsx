@@ -7,24 +7,27 @@ import Fman from "../assets/fman.jpg";
 function OurTeam() {
   return (
     <main
-      className="h-[75vh] w-[100vw]
+      className="
    
-    flex flex-col gap-14 p-16 "
+    flex flex-col sm:gap-10 sm:p-15 p-7"
     >
       <div className="text-center">
-        <p className="text-5xl text-center h-[10vh] font-semibold">
+        <p className="lg:text-5xl text-3xl text-center mb-5 font-semibold">
           MEET THE TEAM
         </p>
-        <p className="text-lg font-medium">
+        <p className="text-lg md:text-2xl lg:text-lg font-medium ">
           Get to know the dedicated professionals behind carekonect
         </p>
       </div>
-      <section className="flex flex-row gap-16 w-[90vw]">
+      <section
+        className="flex flex-col sm:justify-center sm:items-center 
+      md:flex-row gap-16 "
+      >
         <Props
-          name="Name: Okeke Anthony"
+          name="Name: Ukaegbu Chibuzo"
           position="Position: CEO"
           profile={Fboy}
-          bio="Bio: Anthony leads the company with the vision to make healthcare accessible"
+          bio="Bio: Chibuzo leads the company with the vision to make healthcare accessible"
         />
         <Props
           name="Name: Ukaegbu Heritage"
@@ -33,7 +36,7 @@ function OurTeam() {
           profile={Fgirl}
         />
         <Props
-          name="Hart Rejoice"
+          name="Name: Hart Rejoice"
           position="Position: COO"
           bio="Bio: Rejoice overseas operations to ensure smooth functioning"
           profile={Fman}

@@ -11,7 +11,7 @@ function Home() {
 
   return (
     <main
-      className={`max-w-full overflow-x-hidden  ${
+      className={`max-w-full  overflow-x-hidden  ${
         error ? "overflow-hidden fixed h-[88vh]" : "overflow-visible h-full"
       }`}
     >

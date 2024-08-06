@@ -14,19 +14,22 @@ function Footer() {
   return (
     <>
       <main
-        className=" w-full h-[462px]
-    bg-gradient-to-b from-[#76B282] to-[#206E30] flex flex-col justify-center px-14 "
+        className=" w-full sm:h-[462px] h-[60vh]
+    bg-gradient-to-b from-[#76B282] to-[#206E30] flex flex-col justify-center px-7 sm:px-14 "
       >
-        <section className=" flex text-white w-[1240px] h-[341px] text-[16px] font-normal">
-          <div className="flex flex-col gap-5 w-[27vw]">
+        <section
+          className=" flex text-white w-[1240px] text-sm 
+        h-[341px] sm:text-[16px] font-normal"
+        >
+          <div className="flex flex-col sm:gap-5 gap-1 sm:w-[27vw] w-[18vw]">
             <img src={Logo} alt="" className="w-[224px] h-[53px]" />
             <p>About us</p>
             <p>Our team</p>
             <p>Careers</p>
             <p>Press</p>
           </div>
-          <section className="flex flex-row gap-14 w-[848px] ">
-            <div className="flex flex-col gap-5">
+          <section className="flex sm:flex-row sm:gap-14 gap-4 sm:w-[848px] w-[18vw] ">
+            <div className="flex flex-col sm:gap-5 gap-2">
               <p className="h-[7vh] font-medium text-[20px]">Search By</p>
               <p>Specialty</p>
               <p>City</p>

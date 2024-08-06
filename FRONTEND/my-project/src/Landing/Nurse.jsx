@@ -13,48 +13,86 @@ function Nurse() {
   const navigate = useNavigate();
   return (
     <>
-      <main className="h-[110vh] w-full ">
-        <div className="sm:h-[30vh] h-0 justify-start flex sm:w-[95vw] w-0 flex-row gap-3">
-          <img src={Gosab} alt="" className="w-[13vw] h-[22vh]" />
-          <img src={Drug} alt="" className="h-[19vh]" />
-          <img src={Medicare} alt="" className="h-[22vh]" />
-          <img src={Stork} alt="" className="h-[22vh]" />
-          <img src={Otema} alt="" className="h-[20vh]" />
-          <img src={Med} alt="" className="h-[19vh]" />
-          <img src={Alvisdra} alt="" className="h-[23vh]" />
-          <img src={FMC} alt="" className="h-[14vh] pt-10 w-[14vw]" />
+      <main className="h-full py-8 md:py-12 w-[100%]  ">
+        <div
+          className=" no-scrollbar
+        xl:overflow-x-hidden  justify-start items-center lg:justify-center
+        overflow-x-auto flex    flex-row "
+        >
+          <img
+            src={Gosab}
+            alt=""
+            className="sm:h-[22vh] h-1/3 w-1/3  sm:w-auto"
+          />
+          <img
+            src={Drug}
+            alt=""
+            className="sm:h-[19vh] h-1/3 w-1/3  sm:w-auto"
+          />
+          <img
+            src={Medicare}
+            alt=""
+            className="sm:h-[22vh] h-1/3 w-1/3  sm:w-auto"
+          />
+          <img
+            src={Stork}
+            alt=""
+            className="sm:h-[22vh] h-1/3 w-1/3  sm:w-auto"
+          />
+          <img
+            src={Otema}
+            alt=""
+            className="sm:h-[20vh] h-1/4 w-1/4   sm:w-auto"
+          />
+          <img
+            src={Med}
+            alt=""
+            className="sm:h-[19vh] h-1/5 w-1/5   sm:w-auto"
+          />
+          <img
+            src={Alvisdra}
+            alt=""
+            className="sm:h-[20vh] h-1/3 w-1/3  sm:w-auto"
+          />
+          <img
+            src={FMC}
+            alt=""
+            className=" sm:h-[13vh]  lg:w-[14vw]  h-1/3 w-1/3 "
+          />
         </div>
         <div
-          className="flex sm:flex-row flex-col sm:gap-2 gap-4 justify-center items-center 
-        sm:h-[50vh] h-[95vh] w-screen sm:justify-evenly"
+          className="flex md:flex-row flex-col  justify-center items-center
+             "
         >
           <div
-            className="sm:w-[44vw] w-[98vw] flex flex-col sm:gap-4 gap-8 justify-center
-          sm:h-[50vh] h-[96vh] items-center sm:items-center"
+            className=" flex flex-col 
+            justify-center md:w-3/4 px-4 md:px-8 lg:px-16
+         items-center  
+           text-center lg:text-start lg:items-start"
           >
-            <p className="sm:text-[32px] text-[26px] font-bold w-full">
+            <p className="sm:text-[28px] lg:text-[32px] text-[26px] font-bold mb-4">
               ABOUT US
             </p>
-            <p className=" sm:text-[20px] text-[19px] text-gray-700 text-center sm:text-left">
+            <p className="text-base sm:text-lg md:text-xl mb-6  ">
               CareKonect simplifies health management with personalized advice,
               tailored recommendations, and 24/7 support for booking
               appointments and answering health questions. Enjoy a seamless,
               proactive, and secure healthcare experience with CareKonect.
             </p>
-            <div className="w-full">
+            <div className="">
               <button
                 onClick={() => {
                   navigate("/About");
                 }}
-                className="bg-[#206E30] rounded-md sm:text-[22.5px] text-[19px]
-                font-semibold text-white sm:h-[63px] h-[58px] w-[270px] sm:w-[321.4px]"
+                className="bg-[#206E30] rounded-md 
+                  text-white py-5 mb-4 px-12 font-medium text-lg md:text-xl lg:text-2xl"
               >
                 Learn More
               </button>
             </div>
           </div>
-          <div className="sm:w-[34vw] sm:h-[30vh] w-[85vw] h-[40vh]">
-            <img src={girl} />
+          <div className="mt-8 md:mt-0">
+            <img src={girl} className="w-3/4 h-auto mx-auto " />
           </div>
         </div>
       </main>

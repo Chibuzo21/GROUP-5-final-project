@@ -63,7 +63,7 @@ a.active {
   justify-content: space-between;
 }
 .myclock .react-time-picker__inputGroup__input {
-  width: 5vw;
+  width: 3vw;
   border: none;
   font-size: px;
   text-align: center;
@@ -85,4 +85,20 @@ a.active {
   .start-video-call {
     font-size: 0.8px;
   }
+}
+@media (max-width: 600px) {
+  .chief::after {
+    border-left: 16px solid transparent;
+    border-right: 16px solid transparent;
+    border-top: 38px solid white;
+    bottom: -37px;
+  }
+}
+.no-scrollbar {
+  overflow-x: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
 }

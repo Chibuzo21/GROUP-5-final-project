@@ -39,9 +39,9 @@ const Privatechat = () => {
   return (
     <>
       <div className="flex justify-center items-center h-screen w-screen">
-        <div className=" w-[50vw] bg-white shadow-lg rounded-lg">
+        <div className=" sm:w-[50vw] w-full bg-white shadow-lg rounded-lg">
           <div
-            className="flex items-center  p-4 bg-[#206E30] w-[50vw] h-[15vh]
+            className="flex items-center  p-4 bg-[#206E30] sm:w-[50vw] h-[15vh]
            text-white rounded-t-lg"
           >
             <div
@@ -52,23 +52,28 @@ const Privatechat = () => {
             >
               <IoIosArrowBack />
             </div>
-            <div className="flex items-center w-[33vw] justify-center">
-              <div className="w-[6vw]">
+            <div className="flex items-center sm:w-[33vw] w-full justify-center">
+              <div className="w-1/5 xl:w-1/5 md:w-2/4 sm:w-2/5 lg:w-1/4">
                 {" "}
-                <div className="w-[4vw] h-[8vh] bg-gray-200 rounded-full">
+                <div className="xl:py-1 xl:px-1 lg:px-1 py-1  px-1 sm:px-1 sm:py-1  bg-gray-200 rounded-full mx-2">
                   <img src={Nurse8} alt="" srcset="" />
                 </div>
               </div>
-              <div className=" w-[18vw]">
-                <h2 className="text-2xl font-semibold ">Dr. Will Smith</h2>
-                <p className="text-lg">Online</p>
+              <div className=" w-2/4 md:w-[95%]  sm:w-[85%]">
+                <h2 className="md:text-xl lg:text-2xl text-lg font-semibold ">
+                  Dr. Will Smith{" "}
+                </h2>
+                <p className="md:text-lg text-sm">Online</p>
               </div>
             </div>
-            <div className="flex justify-center items-center w-[22vw]">
-              <span className="text-3xl w-[5vw] cursor-pointer ">
+            <div
+              className="flex md:justify-center justify-between 
+            items-center w-[22vw] px-1 sm:w-[15vw] md:w-[22vw]"
+            >
+              <span className="md:text-3xl text-2xl w-[5vw] cursor-pointer ">
                 <MdOutlineLocalPhone />
               </span>
-              <span className="text-3xl cursor-pointer">
+              <span className="md:text-3xl text-2xl cursor-pointer">
                 <MdOutlineVideocam />
               </span>
             </div>
@@ -87,9 +92,9 @@ const Privatechat = () => {
                     msg.sender === "user"
                       ? "bg-[#206E30] text-white"
                       : "bg-gray-200"
-                  } p-3 rounded-lg h-[9vh] `}
+                  } py-1 px-4 rounded-lg  `}
                 >
-                  <p className="text-xl">{msg.text}</p>
+                  <p className="text-xl ">{msg.text}</p>
                 </div>
               </div>
             ))}
