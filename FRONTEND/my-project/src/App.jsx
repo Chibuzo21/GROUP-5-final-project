@@ -2,7 +2,7 @@ import Home from "./Pages/Home";
 import About from "./Pages/About";
 import Login from "./Pages/Login";
 import Signup from "./Pages/Signup";
-import Contact from "./Pages/Contact";
+import Contact from "./Pages/contact/Contact";
 import Main from "./Components/Main";
 import { Routes, Route } from "react-router-dom";
 import Carekonect from "./Pages/Carekonect";
