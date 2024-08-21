@@ -9,6 +9,7 @@ export const FlexDiv = styled.div`
 export const ContainerWrapper = styled.div`
   width: 100%;
   height: auto;
+  padding-top:60px;
   /* background-color: red; */
   display: flex;
   align-items: center;
@@ -34,36 +35,50 @@ export const Section1 = styled.section`
 export const Wrapper = styled.div`
   width: ${({ width }) => (width ? width : "100%")};
   /* height: auto; */
-  align-items: center;
+  /* align-items: center; */
   background-color: ${({ background }) =>
     background ? background : "transparent"};
   display: flex;
   flex-direction: column;
-  padding: ${({ padding }) => (padding ? padding : "0")};
-  /* align-items: center; */
-  /* justify-content: space-between; */
+  padding-top: ${({ paddingTop }) => (paddingTop ? paddingTop : "0px")};
+  padding: ${({ padding }) => (padding ? padding : "0px")};
+
+  padding-bottom: ${({ paddingBottom }) =>
+    paddingBottom ? paddingBottom : "0px"};
+  align-items: ${({ alignItems }) => (alignItems ? alignItems : "")};
+  justify-items: center;
+  border-radius: ${({ bordeRadius }) => (bordeRadius ? bordeRadius : "0")};
 `;
 
 export const InputContainer = styled.div`
   width: 100%;
-  margin-top: 20px;
+  margin-top: 0px;
+  align-items: center;
+  justify-content: center;
 `;
 export const P = styled.p`
   color: #000;
+  word-spacing: 5px;
+  margin-bottom: 30px;
 `;
 
-export const H1 = styled.h1`
+export const H1 = styled.h2`
   color: #000;
+  font-size: 54px;
+
+
+  width: ${({ width }) => (width ? width : "100%")};
+  
 `;
 
 export const Input = styled.input`
   width: ${({ width }) => (width ? width : "100%")};
   height: 70px;
+  color: #979a99;
   border: "1px solid ";
 
-  background-color: ${({ background }) =>
-    background ? background : "#d7dadc"};
-  padding: 5px;
+  background-color: ${({ background }) => (background ? background : "#fff")};
+  padding: 8px;
   border-radius: 10px;
 `;
 
@@ -71,8 +86,9 @@ export const Textarea = styled.textarea`
   width: ${({ width }) => (width ? width : "100%")};
   height: 200px;
   background-color: ${({ background }) =>
-    background ? background : "#d7dadc"};
-  padding: 5px;
+    background ? background : "#fff"};
+  padding: 8px;
+  /* padding: 5px; */
   border-radius: 10px;
 `;
 

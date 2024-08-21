@@ -43,8 +43,8 @@ function Contact() {
   return (
     <main className="overflow-x-hidden">
       <Section1
-        // className="h-[65vh] w-screen"
-        // style={{ backgroundImage: `url(${Frame})` }}
+      // className="h-[65vh] w-screen"
+      // style={{ backgroundImage: `url(${Frame})` }}
       >
         <div
           className="text-white h-full w-full flex items-center justify-center
@@ -56,11 +56,14 @@ function Contact() {
       <FlexDiv>
         <ContainerWrapper>
           <Container width="50%" padding="20px">
-            <Wrapper padding="40px" width="100%" bg>
-              <H1 className="text-5xl font-bold ">Get In Touch</H1>
+            <Wrapper padding="40px" width="80%" bg>
+              <H1>Get In Touch</H1>
               <P>
-                Feel free to contact us and we'll get back to you as soon as we
-                can. We're here to help you with any questions or support you
+                Feel free to contact us and we'll get back
+                <br /> to you as soon as we can.
+              </P>
+              <P>
+                We're here to help you with any questions <br /> or support you
                 need.
               </P>
             </Wrapper>
@@ -72,7 +75,15 @@ function Contact() {
             md1090width="100%"
             flexDirection="column"
           >
-            <Wrapper width="100%" padding="20px">
+            <Wrapper
+              width="80%"
+              padding="20px"
+              justifyContent="center"
+              alignItems="center"
+              bordeRadius="20px"
+              background="#979a99"
+              paddingBottom="90px"
+            >
               {/* <div className="h-full w flex items-center justify-center"> */}
               <InputContainer>
                 <P className="font-bold text-2xl">Name</P>
@@ -128,12 +139,12 @@ function Contact() {
       </SquareBoxSection>
 
       <ContainerWrapper>
-        <Container width="50%" padding="20px" >
-          <Wrapper width="100%" padding="20px">
+        <Container width="50%">
+          <Wrapper width="80%" padding="0px">
             <p className="text-[#206E30] ">Got Questions?</p>
-            <p className="text-[48px] text-[#343A40]   font-bold">
-              Frequently Asked Questions
-            </p>
+            <H1 width="80%">
+              Frequently Asked <br /> Questions
+            </H1>
             <p className="text-[#206E30] text-[16px]   ">
               Still have questions that aren't covered? visit our help desk
               today and get the answers you need.
@@ -145,7 +156,7 @@ function Contact() {
         </Container>
 
         <Container width="50%" padding="20px">
-          <Wrapper width="100%" >
+          <Wrapper width="80%">
             {FaqData.map((faq, index) => (
               <FAQitem
                 key={index}

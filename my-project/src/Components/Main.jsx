@@ -8,7 +8,7 @@ function Main() {
     <>
       <Header />
       <Outlet />
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 }
