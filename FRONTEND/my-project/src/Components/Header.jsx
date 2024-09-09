@@ -15,7 +15,7 @@ function Header({ toggle }) {
     const handlescrollHeader = () => {
       const scroll = window.scrollY;
 
-      setStickyheader(scroll > 100 ? "fixed" : "static");
+      setStickyheader(scroll > 100 ? "fixed" : "md:static fixed");
     };
     window.addEventListener("scroll", handlescrollHeader);
     //cleanup function
@@ -49,7 +49,7 @@ function Header({ toggle }) {
     <>
       <main
         className={` flex ${stickyHeader} z-40 md:justify-center  justify-around
-         items-center h-[10vh]  w-screen border-2 border-red-500 
+         items-center h-[10vh]  w-screen 
          bg-white sm:w-full  shadow-md overflow-x-hidden`}
       >
         <div className={`lg:w-[22vw] md:w-[23vw] w-[30vw]`}>
@@ -63,10 +63,10 @@ function Header({ toggle }) {
 
         <div
           className={`flex md:flex-row flex-col md:static md:top-0
-             top-16 md:bg-white 
+             top-12 md:bg-white 
              bg-black/100 ${togglemenu} md:z-0 z-50  justify-start items-center
-             md:items-center md:justify-between   ${width}  md:text-md sm:text-xl
-              lg:text-[20px]
+             md:items-center md:justify-between   ${width}  md:text-sm sm:text-xl
+              xl:text-[20px] lg:text-lg
               md:gap-0 gap-8 
         font-medium md:text-[#979B98] text-white overflow-x-hidden md:h-[54px] `}
         >

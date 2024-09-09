@@ -116,26 +116,27 @@ function Signup() {
 
   return (
     <>
-      <div className="flex items-center justify-center w-full h-[88vh] ">
-        <section className="flex items-center justify-center w-[580px]">
+      <main className="flex items-center justify-evenly h-screen md:h-full py-3">
+        <section className=" md:flex  md:w-[43%]   xl:w-[42%] hidden">
           <img
-            className="rounded-md w-[500px] h-[70vh]"
+            className="rounded-md w-full  lg:h-[78vh] md:h-[70vh] "
             src={carekonect}
             alt="image"
           />
         </section>
-        <section className="  w-[609px]  h-[88vh] flex flex-col items-start">
-          <div className="flex  h-[9vh] w-full">
-            <p className="w-full font-semibold flex items-center justify-center text-[38px]">
+        <section className="  md:w-[50%] w-[85%]  flex flex-col md:h-full h-3/4">
+          <div className="">
+            <p className=" font-semibold text-2xl md:text-3xl lg:text-[38px] text-center">
               SIGNUP
             </p>
           </div>
-          <div className="h-[79vh] w-full">
-            <div className="h-[55.4vh]">
+          <div className=" w-full grid gap-5">
+            <div className="  ">
               <div>
-                <p className="font-medium md:text-[20px]">Username</p>
+                <p className="font-medium lg:text-[20px] text-[17px]">Username</p>
                 <input
-                  className="w-[40vw] h-[5vh] px-2 outline-[#206E30] border-[1px] border-gray-300 rounded-sm"
+                  className="w-full py-3 px-2 outline-[#206E30] border-[1px] border-gray-300
+                   rounded-sm"
                   type="text"
                   value={username}
                   onChange={handleinput}
@@ -149,9 +150,9 @@ function Signup() {
                 )}
               </div>
               <div>
-                <p className="font-medium md:text-[20px]">Email</p>
+                <p className="font-medium text-[17px] lg:text-[20px]">Email</p>
                 <input
-                  className="w-[40vw] px-2 h-[5vh] outline-[#206E30] border-[1px] border-gray-300 rounded-sm"
+                  className="w-full py-3 px-2  outline-[#206E30] border-[1px] border-gray-300 rounded-sm"
                   type="text"
                   placeholder="Enter your email adress"
                   required
@@ -164,10 +165,10 @@ function Signup() {
                   </p>
                 )}
               </div>
-              <div>
-                <p className="font-medium md:text-[20px]">Password</p>
+              <div className="relative">
+                <p className="font-medium text-[17px] lg:text-[20px]">Password</p>
                 <input
-                  className="w-[40vw] px-2 h-[5vh] outline-[#206E30] border-[1px] border-gray-300 rounded-sm"
+                  className="w-full px-2 py-3 outline-[#206E30] border-[1px] border-gray-300 rounded-sm"
                   type={Passtype}
                   value={password}
                   onChange={passinput}
@@ -176,7 +177,7 @@ function Signup() {
                 />
                 <button
                   onClick={showPassword}
-                  className="text-xl relative top-1 right-20 "
+                  className="text-xl absolute top-[50%] right-[5%] "
                 >
                   {passwordIcon}
                 </button>
@@ -186,10 +187,10 @@ function Signup() {
                   </p>
                 )}
               </div>
-              <div className="h-[13vh]">
-                <p className="font-medium md:text-[20px]">Confirm password</p>
+              <div className="h-[13vh] relative">
+                <p className="font-medium text-[17px] lg:text-[20px]">Confirm password</p>
                 <input
-                  className="w-[40vw] px-2 h-[5vh] outline-[#206E30] border-[1px]
+                  className="w-full px-2 py-3 outline-[#206E30] border-[1px]
                  border-gray-300 rounded-sm"
                   type={newPasstype}
                   value={newpassword}
@@ -199,7 +200,7 @@ function Signup() {
                 />
                 <button
                   onClick={shownewPassword}
-                  className="text-xl relative  top-1 right-20 "
+                  className="text-xl absolute  top-[50%] right-[5%] "
                 >
                   {newpasswordIcon}
                 </button>
@@ -227,25 +228,29 @@ function Signup() {
                 </p>
               </div>
             </div>
-            <div className="h-[22vh] ">
-              <div className="w-[40vw] flex items-center justify-center flex-col gap-1">
+            <div className=" md:h-full h-[173px]">
+              <div className="w-full flex items-center justify-center flex-col gap-1">
                 <button
                   onClick={handleclick}
-                  className="bg-green-800 rounded-md w-72 h-[6vh] text-white md:text-[17px]"
+                  className="text-white bg-[#206E30] md:py-2 lg:py-4 lg:w-1/2 md:w-3/5 rounded-md 
+              lg:text-[20px] text-md py-2 w-3/5"
                 >
                   Sign Up
                 </button>
                 <div className="flex items-center justify-center space-x-2">
-                  <div className="border-[1px] border-gray-200 w-[9vw] h-0"></div>
-                  <small>or</small>
-                  <div className="border-[1px] border-gray-200 w-[9vw] h-0"></div>
+                <span className="border-b bg-gray-800 md:w-[14vw] w-[18vw] lg:w-[9vw]"></span>
+              <p className="text-gray-500 lg:text-md text-sm">or</p>
+              <span className="border-b bg-gray-800 lg:w-[9vw] w-[18vw] md:w-[14vw]"></span>
                 </div>
-                <button className="flex items-center justify-center space-x-1 rounded-md w-72 h-10 border-[1px] border-black">
+                <button className="text-gray-700 ] rounded-md 
+          md:py-2 lg:py-4 lg:w-1/2 md:w-3/5 py-2 w-3/5
+          lg:text-[20px] md:text-md text-sm border-[#A2A3A2] font-medium border-[1px] flex-row gap-2
+           flex items-center justify-center">
                   <FcGoogle className="w-8 h-6" />
-                  <small>Sign up with Google</small>
+                  <span className="text-[14px] text-[#353635]">Sign up with Google</span>
                 </button>
-                <div className="flex items-center justify-center space-x-1">
-                  <p className="flex font-bold">Already have an account?</p>
+                <div className="flex items-center justify-center space-x-1 font-medium md:text-[13px] lg:text-[14px] text-sm">
+                  <p className="">Already have an account?</p>
                   <span
                     className="text-green-800 cursor-pointer"
                     onClick={logbtn}
@@ -257,7 +262,7 @@ function Signup() {
             </div>
           </div>
         </section>
-      </div>
+      </main>
     </>
   );
 }
