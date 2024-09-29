@@ -41,13 +41,13 @@ I found the perfect specialist in minutes"
                     Using CareKonect has streamlined my appointment scheduling
                     process, allowing me to focus more on patient care
                   </p>
-                  <div className="flex w-[48%] sm:w-[46%] md:w-[82%] lg:w-[68%]  justify-between items-center">
+                  <div className="flex w-[70%] sm:w-[46%] md:w-[82%] lg:w-[72%]  justify-between items-center">
                     <img
                       src={Suit}
                       alt=""
                       className="lg:w-[45.04px] lg:h-[45.04px] md:h-[45px] md:w-[45px]  w-[44px] h-[44px]"
                     />
-                    <div className="md:text-sm lg:text-lg text-sm">
+                    <div className="md:text-sm lg:text-lg text-sm w-[69%] py-1">
                       <p className="text-[#5DD9A0]">Dr. John M.</p>
                       <p>General Practitioner</p>
                     </div>

@@ -26,7 +26,7 @@ const FAQitem = ({ isOpen, faq, onClick }) => (
   <FAQitemComtainer>
     <div className="flex w-full items-center justify-between h-[10vh]">
       <p className="font-semibold text-lg  text-black">{faq.question}</p>
-      <button onClick={onClick} className="text-2xl font-bold ">
+      <button onClick={onClick} className="text-xl text-black font-bold ">
         {isOpen ? <RxCross1 /> : <VscAdd />}
       </button>
     </div>
@@ -43,22 +43,24 @@ function Contact() {
   return (
     <main className="overflow-x-hidden">
       <Section1
-        // className="h-[65vh] w-screen"
-        // style={{ backgroundImage: `url(${Frame})` }}
+      // className="h-[65vh] w-screen"
+      // style={{ backgroundImage: `url(${Frame})` }}
       >
         <div
           className="text-white h-full w-full flex items-center justify-center
-        text-[56px] leading-[67.77px] font-bold "
+       md:text-[66px] font-bold text-5xl "
         >
           CONTACT US
         </div>
       </Section1>
       <FlexDiv>
         <ContainerWrapper>
-          <Container width="50%" padding="20px">
-            <Wrapper padding="40px" width="100%" bg>
-              <H1 className="text-5xl font-bold ">Get In Touch</H1>
-              <P>
+          <Container width="45%" padding="20px">
+            <Wrapper padding="10px" width="60%" bg>
+              <H1 className="lg:text-5xl text-3xl font-semibold mb-2 ">
+                Get In Touch
+              </H1>
+              <P className="text-md md:text-lg font-medium mb-2 text-center leading-6 ">
                 Feel free to contact us and we'll get back to you as soon as we
                 can. We're here to help you with any questions or support you
                 need.
@@ -90,8 +92,8 @@ function Contact() {
 
                 <Textarea type="text" placeholder="Message" />
               </InputContainer>
-              <div className="flex items-center justify-end">
-                <button className="w-[15vw] h-[8vh] text-white bg-green-700 rounded-md">
+              <div className="flex items-center justify-center">
+                <button className="py-5 px-8 text-xl w-[60vw] xl:w-[60vw] text-white bg-green-700 rounded-md">
                   Send Message
                 </button>
               </div>
@@ -103,7 +105,7 @@ function Contact() {
 
       <SquareBoxSection>
         <SquareBox>
-          <span className="text-[#206E30] text-[10vh] text-left h-[14vh]">
+          <span className="text-[#206E30] md:text-[10vh] text-[6vh] text-left h-[14vh]">
             <MdOutlineMailOutline />
           </span>
           <p className="text-md font-bold h-[6vh] ">Email:</p>
@@ -116,7 +118,7 @@ function Contact() {
         </SquareBox>
 
         <SquareBox>
-          <span className="text-[#206E30] text-[10vh] text-left h-[14vh]">
+          <span className="text-[#206E30] md:text-[10vh] text-[6vh] text-left h-[14vh]">
             <FiPhone />
           </span>
           <p className="text-md font-bold h-[6vh] ">Phone:</p>
@@ -128,24 +130,24 @@ function Contact() {
       </SquareBoxSection>
 
       <ContainerWrapper>
-        <Container width="50%" padding="20px" >
-          <Wrapper width="100%" padding="20px">
-            <p className="text-[#206E30] ">Got Questions?</p>
-            <p className="text-[48px] text-[#343A40]   font-bold">
+        <Container width="49%" padding="20px">
+          <Wrapper width="70%" padding="20px">
+            <p className="text-[#206E30] mb-2 ">Got Questions?</p>
+            <p className="md:text-[48px] text-[30px] sm:text-[40px] text-[#343A40] mb-2  font-bold">
               Frequently Asked Questions
             </p>
-            <p className="text-[#206E30] text-[16px]   ">
+            <p className="text-[#206E30] text-[16px] mb-4   ">
               Still have questions that aren't covered? visit our help desk
               today and get the answers you need.
             </p>
-            <button className="bg-[#16A362] text-white h-[59px] w-[304px] rounded-lg">
+            <button className="bg-[#16A362] text-white h-[59px] w-[384px] rounded-lg">
               Contact our Help Desk
             </button>
           </Wrapper>
         </Container>
 
         <Container width="50%" padding="20px">
-          <Wrapper width="100%" >
+          <Wrapper width="100%">
             {FaqData.map((faq, index) => (
               <FAQitem
                 key={index}

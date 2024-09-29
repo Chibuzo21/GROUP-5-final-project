@@ -26,8 +26,8 @@ function Payment() {
         }`}
       >
         <section
-          className=" bg-[#D1E8D0] flex items-center 
-        justify-center py-8 md:py-12"
+          className=" bg-[#D1E8D0] flex items-center h-[60vh] md:h-[60vh] lg:h-[75vh]
+        justify-center py-8 md:py-15"
         >
           <div className="grid justify-items-center text-center">
             <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold">
@@ -135,12 +135,12 @@ function Payment() {
 
         {alert && (
           <section
-            className="fixed top-10 z-50 bg-black bg-opacity-90 flex h-screen w-screen
+            className="fixed top-0 z-50 bg-black bg-opacity-90 flex h-screen w-screen
           justify-center items-center"
           >
             <div
               className="bg-[#EDF2E8] sm:p-8 p-2 rounded-xl shadow-lg w-11/12 
-            md:w-2/3 lg:w-1/2"
+            md:w-3/3 lg:w-1/2"
             >
               <h2 className="sm:text-4xl text-2xl font-semibold text-center mb-4">
                 Thank You for Your Payment!
@@ -148,7 +148,7 @@ function Payment() {
               <div className="flex justify-center mb-4">
                 <GoThumbsup className="text-[#206E30] text-6xl" />
               </div>
-              <p className="text-center sm:text-lg text-md font-medium mb-4">
+              <p className="text-center sm:text-lg text-sm font-medium mb-4">
                 Your payment has been successfully processed. You are now ready
                 to start your video consultation.
               </p>
@@ -161,7 +161,7 @@ function Payment() {
                   Start Virtual Consultation
                 </button>
               </div>
-              <div className="text-center sm:text-lg text-md">
+              <div className="text-center sm:text-lg text-sm">
                 <p className="mb-2">
                   <span className="text-[#206E30]">Support:</span> If you have
                   any questions or encounter any issues, please contact our

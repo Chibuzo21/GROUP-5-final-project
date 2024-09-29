@@ -1,4 +1,3 @@
-import Header from "../Components/Header";
 import { IoMdCheckmark } from "react-icons/io";
 import { FcGoogle } from "react-icons/fc";
 import carekonect from "../assets/carekonect.jpg";
@@ -6,11 +5,12 @@ import { useState, useContext } from "react";
 import { Context } from "../Context";
 import { useNavigate } from "react-router-dom";
 import { IoEyeOutline, IoEyeOffOutline } from "react-icons/io5";
+import Header from "../Components/Header";
 
 function Signup() {
   const { setViewnav } = useContext(Context);
   const { setName } = useContext(Context);
-  const { setWidth } = useContext(Context);
+
   const { setLogo } = useContext(Context);
   const { setnavwidth } = useContext(Context);
   const { setNamewidth } = useContext(Context);
@@ -20,6 +20,7 @@ function Signup() {
   const [emailerror, setEmailerror] = useState(false);
   const [password, setPassword] = useState("");
   const [newpassword, setnewPassword] = useState("");
+  const { isLoggedin, setIsLoggedin } = useContext(Context);
   const [email, setEmail] = useState("");
   const [Passworderror, setPassworderror] = useState(false);
   const [passwordIcon, setPasswordicon] = useState(<IoEyeOutline />);
@@ -88,10 +89,12 @@ function Signup() {
         navigate("/");
         setViewnav(true);
         setName(username);
-        setWidth("md:w-[78vw]  md:flex hidden");
         setnavwidth("hidden");
         setNamewidth(true);
+        localStorage.setItem("username", username);
+        localStorage.setItem("isLoggedin", "true");
       }, 600);
+      setIsLoggedin(true);
     }
   };
   const handleinput = (event) => {
@@ -116,24 +119,27 @@ function Signup() {
 
   return (
     <>
-      <main className="flex items-center justify-evenly h-screen md:h-full py-3">
-        <section className=" md:flex  md:w-[43%]   xl:w-[42%] hidden">
+      <Header />
+      <main className="flex items-center justify-evenly lg:h-[120vh] md:h-[70vh]  py-3 lg:py-4">
+        <section className=" md:flex  md:w-[43%]   xl:w-[42%] hidden h-3/4 lg:h-5/6 lg:py-2">
           <img
-            className="rounded-md w-full  lg:h-[78vh] md:h-[70vh] "
+            className="rounded-md w-full  lg:h-[78vh] md:h-[60vh] "
             src={carekonect}
             alt="image"
           />
         </section>
-        <section className="  md:w-[50%] w-[85%]  flex flex-col md:h-full h-3/4">
+        <section className="  md:w-[50%] w-[85%]  flex flex-col h-3/4 md:py-3 lg:py-0 lg:h-full">
           <div className="">
-            <p className=" font-semibold text-2xl md:text-3xl lg:text-[38px] text-center">
+            <p className=" font-semibold text-2xl md:text-4xl lg:text-[38px] text-center">
               SIGNUP
             </p>
           </div>
           <div className=" w-full grid gap-5">
             <div className="  ">
               <div>
-                <p className="font-medium lg:text-[20px] text-[17px]">Username</p>
+                <p className="font-medium lg:text-[20px] text-[17px]">
+                  Username
+                </p>
                 <input
                   className="w-full py-3 px-2 outline-[#206E30] border-[1px] border-gray-300
                    rounded-sm"
@@ -166,7 +172,9 @@ function Signup() {
                 )}
               </div>
               <div className="relative">
-                <p className="font-medium text-[17px] lg:text-[20px]">Password</p>
+                <p className="font-medium text-[17px] lg:text-[20px]">
+                  Password
+                </p>
                 <input
                   className="w-full px-2 py-3 outline-[#206E30] border-[1px] border-gray-300 rounded-sm"
                   type={Passtype}
@@ -188,7 +196,9 @@ function Signup() {
                 )}
               </div>
               <div className="h-[13vh] relative">
-                <p className="font-medium text-[17px] lg:text-[20px]">Confirm password</p>
+                <p className="font-medium text-[17px] lg:text-[20px]">
+                  Confirm password
+                </p>
                 <input
                   className="w-full px-2 py-3 outline-[#206E30] border-[1px]
                  border-gray-300 rounded-sm"
@@ -200,7 +210,7 @@ function Signup() {
                 />
                 <button
                   onClick={shownewPassword}
-                  className="text-xl absolute  top-[50%] right-[5%] "
+                  className="text-xl absolute sm:top-[30%] lg:top-[50%] top-[50%] right-[5%] "
                 >
                   {newpasswordIcon}
                 </button>
@@ -210,9 +220,9 @@ function Signup() {
                   </p>
                 )}
               </div>
-              <div className="flex space-x-2  items-center">
+              <div className="flex space-x-2  items-center lg:py-3">
                 <button
-                  className="border-[1px] border-[#206E30] rounded-sm h-[2.8vh] w-[1.4vw]"
+                  className="border-[1px] border-[#206E30] rounded-sm h-[2.8vh] w-[1.4vw] md:w-[4vw] lg:w-[1.4vw]"
                   onClick={icon}
                 >
                   <span
@@ -238,16 +248,20 @@ function Signup() {
                   Sign Up
                 </button>
                 <div className="flex items-center justify-center space-x-2">
-                <span className="border-b bg-gray-800 md:w-[14vw] w-[18vw] lg:w-[9vw]"></span>
-              <p className="text-gray-500 lg:text-md text-sm">or</p>
-              <span className="border-b bg-gray-800 lg:w-[9vw] w-[18vw] md:w-[14vw]"></span>
+                  <span className="border-b bg-gray-800 md:w-[14vw] w-[18vw] lg:w-[9vw]"></span>
+                  <p className="text-gray-500 lg:text-md text-sm">or</p>
+                  <span className="border-b bg-gray-800 lg:w-[9vw] w-[18vw] md:w-[14vw]"></span>
                 </div>
-                <button className="text-gray-700 ] rounded-md 
+                <button
+                  className="text-gray-700 ] rounded-md 
           md:py-2 lg:py-4 lg:w-1/2 md:w-3/5 py-2 w-3/5
           lg:text-[20px] md:text-md text-sm border-[#A2A3A2] font-medium border-[1px] flex-row gap-2
-           flex items-center justify-center">
+           flex items-center justify-center"
+                >
                   <FcGoogle className="w-8 h-6" />
-                  <span className="text-[14px] text-[#353635]">Sign up with Google</span>
+                  <span className="text-[14px] text-[#353635]">
+                    Sign up with Google
+                  </span>
                 </button>
                 <div className="flex items-center justify-center space-x-1 font-medium md:text-[13px] lg:text-[14px] text-sm">
                   <p className="">Already have an account?</p>

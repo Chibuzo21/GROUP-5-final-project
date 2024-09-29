@@ -20,13 +20,13 @@ function MyClock() {
   return (
     <>
       <main>
-        <p className="font-medium text-base sm:text-lg md:text-xl">
+        <p className="font-medium text-base sm:text-lg md:text-xl mb-4">
           Select Time
         </p>
         <div
           className="myclock grid
          gap-10 content-center justify-items-center rounded-lg shadow-md 
-         border-[#BCE6CE] border-2 h-[55vh] px-4 "
+         border-[#BCE6CE] border-2 h-4/4 p-4 "
         >
           <Clock value={value} />
           <TimePicker

@@ -7,11 +7,10 @@ import { Context } from "../Context";
 import Header from "../Components/Header";
 import { IoEyeOffOutline, IoEyeOutline } from "react-icons/io5";
 
-function Login() {
+function Login({}) {
   const [showMark, setshowMark] = useState(false);
   const { setViewnav } = useContext(Context);
   const { setName } = useContext(Context);
-  const { setWidth } = useContext(Context);
 
   const { Navwidth, setnavwidth } = useContext(Context);
   const { setNamewidth } = useContext(Context);
@@ -22,7 +21,7 @@ function Login() {
   const [Passworderror, setPassworderror] = useState(false);
   const [passwordIcon, setPasswordicon] = useState(<IoEyeOutline />);
   const [Passtype, setPasstype] = useState("password");
-
+  const { isLoggedin, setIsLoggedin } = useContext(Context);
   const ValidateUsername = (username) => {
     const emailpattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailpattern.test(username) || username.length >= 4;
@@ -57,11 +56,13 @@ function Login() {
         navigate("/");
         setViewnav(true);
         setName(username);
-        setWidth("md:w-[78vw] md:flex hidden");
 
         setnavwidth("hidden");
         setNamewidth("flex");
+        localStorage.setItem("username", username);
+        localStorage.setItem("isLoggedin", "true");
       }, 600);
+      setIsLoggedin(true);
     }
   };
   const handleinput = (event) => {
@@ -82,29 +83,26 @@ function Login() {
 
   return (
     <>
-      {" "}
+      <Header />
       <main
         className="flex md:flex-row flex-col w-screen items-center justify-center 
-        md:h-full h-screen
+        py-4  lg:h-full md:h-[70vh]
    "
       >
-        <div className=" md:mt-0 lg:w-[40%] md:w-[50%] hidden md:flex  lg:m-10">
-          <img
-            src={Medical}
-            className="md:h-full md:w-full h-[70vh]"
-          />
+        <div className="  md:flex  md:w-[43%] h-3/4 lg:h-5/6 lg:py-2  xl:w-[42%] hidden">
+          <img src={Medical} className=" lg:h-[78vh] md:h-[50vh]" />
         </div>
 
         <section
-          className=" md:w-[46%] w-[85%] flex flex-col justify-center items-center
+          className=" md:w-[46%] w-[85%] flex flex-col justify-center items-center 
           "
         >
-          <p className="text-center text-2xl lg:text-[38px] font-semibold mb-2">
+          <p className="text-center text-2xl md:text-[30px] lg:text-[38px] font-semibold mb-4">
             LOGIN
           </p>
           <div className="  flex flex-col static px-10 w-full">
             <div>
-              <p className="font-medium md:text-[17px] lg:text-[20px] sm:text-2xl text-xl">
+              <p className="font-medium md:text-[19px] lg:text-[20px] sm:text-2xl text-xl">
                 Email or Username
               </p>
               <input
@@ -126,7 +124,9 @@ function Login() {
             </div>
 
             <div className=" relative">
-              <p className="font-medium md:text-[17px] lg:text-[20px] sm:text-2xl text-xl">Password</p>
+              <p className="font-medium md:text-[19px] lg:text-[20px] sm:text-2xl text-xl">
+                Password
+              </p>
               <input
                 type={Passtype}
                 placeholder="Enter your password"
@@ -155,7 +155,7 @@ function Login() {
             <div className="flex items-center flex-row lg:gap-2 gap-3 px-1">
               <button
                 onClick={icon}
-                className="rounded-sm lg:h-[3vh] h-[2.8vh] sm:w-[2vw] lg:w-[1.5vw] text-2xl 
+                className="rounded-sm lg:h-[3vh] h-[2.8vh] sm:w-[3vw] lg:w-[1.5vw] text-2xl 
             flex justify-center items-center border-[#206E30] border-[1px] w-[4vw]"
               >
                 <span
@@ -173,8 +173,8 @@ function Login() {
           </div>
           <div className="flex h-[243px]  w-full justify-center items-center flex-col  lg:gap-2  gap-4">
             <button
-              className="text-white bg-[#206E30] md:py-2 lg:py-4 lg:w-1/2 md:w-3/5 rounded-md 
-              lg:text-[20px] text-md py-2 w-3/5"
+              className="text-white bg-[#206E30] md:py-3 lg:py-4 lg:w-1/2 md:w-4/5 rounded-md 
+              lg:text-[20px] text-md md:text-[18px] py-2 w-3/5"
               onClick={handleclick}
             >
               Login

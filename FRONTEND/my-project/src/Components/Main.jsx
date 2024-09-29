@@ -5,8 +5,15 @@ import Footer from "./Footer";
 import { Context } from "../Context";
 
 function Main() {
-  const { setNamewidth, Navwidth, setnavwidth, viewNav, setViewnav } =
-    useContext(Context);
+  const {
+    setNamewidth,
+    Navwidth,
+    setnavwidth,
+    viewNav,
+    setViewnav,
+    isLoggedin,
+    setIsLoggedin,
+  } = useContext(Context);
 
   const [showPopup, setShowPopup] = useState(false);
   const togglePopup = () => {
@@ -15,6 +22,8 @@ function Main() {
   };
   const showlogout = () => {
     setShowPopup(true);
+    setIsLoggedin(false);
+    localStorage.removeItem("isLoggedin");
   };
 
   const divRef = useRef();
@@ -35,7 +44,6 @@ function Main() {
     <>
       <Header toggle={showlogout} />
       <section className="relative">
-        {console.log("showPopup:", showPopup)}
         {showPopup && (
           <div
             onClick={togglePopup}
@@ -80,7 +88,7 @@ function Main() {
         )}
         <Outlet />
       </section>
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 }

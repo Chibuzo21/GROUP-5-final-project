@@ -39,47 +39,50 @@ const Nurse4 = () => {
   return (
     <>
       <div className="flex justify-center items-center h-screen w-screen">
-        <div className=" sm:w-[50vw] w-full bg-white shadow-lg rounded-lg">
+        <div className=" sm:w-[80vw] h-[100vh] w-full bg-white shadow-lg rounded-lg">
           <div
-            className="flex items-center  p-4 bg-[#206E30] sm:w-[50vw] h-[15vh]
+            className="flex items-center  p-4 bg-[#206E30] sm:w-[80vw] h-[15vh] lg:h-[23vh]
            text-white rounded-t-lg"
           >
             <div
-              className="text-3xl  cursor-pointer "
+              className="text-4xl md:mr-10  cursor-pointer "
               onClick={() => {
                 navigate("/Chat");
               }}
             >
               <IoIosArrowBack />
             </div>
-            <div className="flex items-center sm:w-[33vw] w-full justify-center">
-              <div className="w-1/5 xl:w-1/5 md:w-2/4 sm:w-2/5 lg:w-1/4">
+            <div className="flex items-center sm:w-[53vw] w-full justify-center">
+              <div className="w-1/3 xl:w-1/5 md:w-2/4 sm:w-2/5 lg:w-1/4">
                 {" "}
-                <div className="xl:py-1 xl:px-1 lg:px-1 py-1  px-1 sm:px-1 sm:py-1  bg-gray-200 rounded-full mx-2">
+                <div
+                  className="xl:py-1 xl:px-1 lg:px-1 py-1  px-1 sm:px-1 sm:py-1
+                  bg-gray-200 rounded-full mx-4"
+                >
                   <img src={lady} alt="" srcset="" />
                 </div>
               </div>
               <div className=" w-2/4 md:w-[95%]  sm:w-[85%]">
-                <h2 className="md:text-xl lg:text-2xl text-lg font-semibold ">
+                <h2 className="md:text-3xl lg:text-4xl text-lg font-semibold ">
                   Dr. Juliet Egwu{" "}
                 </h2>
-                <p className="md:text-lg text-sm">Online</p>
+                <p className="lg:text-xl md:text-2xl text-sm">Online</p>
               </div>
             </div>
             <div
               className="flex md:justify-center justify-between 
             items-center w-[22vw] px-1 sm:w-[15vw] md:w-[22vw]"
             >
-              <span className="md:text-3xl text-2xl w-[5vw] cursor-pointer ">
+              <span className="md:text-4xl text-2xl w-[5vw] cursor-pointer ">
                 <MdOutlineLocalPhone />
               </span>
-              <span className="md:text-3xl text-2xl cursor-pointer">
+              <span className="md:text-4xl text-2xl cursor-pointer">
                 <MdOutlineVideocam />
               </span>
             </div>
           </div>
 
-          <div className="p-4 space-y-4 overflow-y-auto h-96">
+          <div className="p-4 space-y-4  overflow-y-auto h-[75vh] lg:h-[65vh] ">
             {messages.map((msg, index) => (
               <div
                 key={index}
@@ -90,26 +93,28 @@ const Nurse4 = () => {
                 <div
                   className={`${
                     msg.sender === "user"
-                      ? "bg-[#206E30] text-white"
+                      ? "bg-[#206E30] flex justify-end text-white"
                       : "bg-gray-200"
                   } py-1 px-4 rounded-lg  `}
                 >
-                  <p className="text-xl ">{msg.text}</p>
+                  <p className="lg:text-2xl md:text-3xl md:min-w-36 min-w-20 p-2 text-xl ">
+                    {msg.text}
+                  </p>
                 </div>
               </div>
             ))}
           </div>
 
-          <div className="p-4 border-t border-gray-200">
+          <div className="p-4 border-2 border-t border-gray-200 ">
             <div className="flex items-center space-x-2">
-              <button className="text-gray-400 text-2xl">
+              <button className="text-gray-400 md:text-4xl text-2xl">
                 <span>
                   <IoCameraOutline />
                 </span>
               </button>
               <input
                 type="text"
-                className="w-full border rounded-full p-2"
+                className="w-full border rounded-full p-2 md:text-xl lg:text-lg"
                 placeholder="Type a message..."
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}

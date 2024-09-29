@@ -7,10 +7,11 @@ import { useState, useEffect, useContext } from "react";
 
 function Header({ toggle }) {
   const [stickyHeader, setStickyheader] = useState("static");
-  const { viewNav, name, width, setWidth, nameWidth, logo, Navwidth } =
-    useContext(Context);
+  const { viewNav, name, nameWidth, logo, Navwidth } = useContext(Context);
 
-  const [togglemenu, settogglemenu] = useState("h-0");
+  const [togglemenu, settogglemenu] = useState(
+    "hidden w-0 md:flex md:w-[70vw] lg:w-[]"
+  );
   useEffect(() => {
     const handlescrollHeader = () => {
       const scroll = window.scrollY;
@@ -22,50 +23,43 @@ function Header({ toggle }) {
     return () => window.removeEventListener("scroll", handlescrollHeader);
   }, []);
   const handleclick = () => {
-    togglemenu === "h-0"
-      ? settogglemenu("h-[100vh] overflow-y-hidden  fixed")
-      : settogglemenu("h-0");
-    // width === "lg:w-[60vw] sm:w-[67vw] md:w-[70vw] hidden"
-    //   ? setWidth("w-screen")
-    //   : setWidth("lg:w-[60vw] sm:w-[67vw] md:w-[70vw] hidden");
-
-    // width === "sm:w-[78vw] hidden"
-    //   ? setWidth("w-screen")
-    //   : setWidth("sm:w-[78vw] hidden");
-
-    if (width === "lg:w-[60vw]  md:w-[60vw] md:flex hidden") {
-      setWidth("w-screen");
-    } else if (width === "md:w-[78vw] md:flex hidden ") {
-      setWidth("w-screen");
-    } else {
-      setWidth("lg:w-[60vw]  md:w-[60vw] md:flex hidden");
-    }
+    togglemenu === "hidden w-0 "
+      ? settogglemenu(
+          "h-screen overflow-y-hidden overflow-x-hidden flex w-screen fixed"
+        )
+      : settogglemenu("hidden w-0 ");
+    setStickyheader("fixed");
   };
   const close = () => {
-    setWidth("md:flex hidden lg:w-[60vw]  md:w-[70vw]");
+    if (
+      togglemenu ===
+      "h-screen overflow-y-hidden overflow-x-hidden flex w-screen fixed"
+    ) {
+      settogglemenu("hidden w-0");
+    }
   };
 
   return (
     <>
       <main
-        className={` flex ${stickyHeader} z-40 md:justify-center  justify-around
-         items-center h-[10vh]  w-screen 
+        className={` flex ${stickyHeader} z-40 md:justify-center  justify-center
+         items-center h-[10vh] w-screen
          bg-white sm:w-full  shadow-md overflow-x-hidden`}
       >
-        <div className={`lg:w-[22vw] md:w-[23vw] w-[30vw]`}>
+        <div className={`lg:w-[22vw] md:w-[23vw] w-[70%]`}>
           <img
             src={Logo}
             alt=""
             className=" lg:h-[39.51px]  md:h-[35px] md:w-[138px] lg:w-[167px]
-            h-[40px] w-[190px] sm:w-[170px]"
+             w-[170px] sm:w-[170px]"
           />
         </div>
 
         <div
-          className={`flex md:flex-row flex-col md:static md:top-0
-             top-12 md:bg-white 
+          className={`my-element  md:flex-row flex-col md:static md:top-0
+           top-[10%] md:bg-white 
              bg-black/100 ${togglemenu} md:z-0 z-50  justify-start items-center
-             md:items-center md:justify-between   ${width}  md:text-sm sm:text-xl
+             md:items-center md:justify-between    md:text-sm sm:text-xl
               xl:text-[20px] lg:text-lg
               md:gap-0 gap-8 
         font-medium md:text-[#979B98] text-white overflow-x-hidden md:h-[54px] `}

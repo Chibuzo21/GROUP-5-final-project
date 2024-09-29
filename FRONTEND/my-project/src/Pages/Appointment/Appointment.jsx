@@ -45,7 +45,7 @@ function Appointment() {
         }`}
       >
         <section
-          className="w-full py-8 md:py-12 bg-[#D1E8D0] flex items-center 
+          className="w-full h-[70vh] md:h-[50vh] lg:h-[70vh] md:py-12 bg-[#D1E8D0] flex items-center 
         justify-center "
         >
           <div className="  grid justify-items-center text-center">
@@ -213,9 +213,11 @@ function Appointment() {
           >
             <div
               src={Success}
-              className=" h-[75vh] leading-[40px] text-3xl font-medium flex flex-col justify-center items-center text-[#206E30] w-[62vw] shadow-xl rounded-xl bg-gray-300 cursor-pointer "
+              className=" lg:h-[75vh] h-1/2 md:px-12 px-2 text-center text-xl   lg:leading-[40px] md:text-3xl font-medium flex flex-col justify-center items-center text-[#206E30] lg:w-[62vw] shadow-xl rounded-xl bg-gray-300 cursor-pointer "
             >
-              <p>You've succesfully booked your appointment.</p>
+              <p className="md:mb-3 mb-2">
+                You've succesfully booked your appointment.
+              </p>
               <p>Please proceed to the hospital without delay.</p>
             </div>
           </section>

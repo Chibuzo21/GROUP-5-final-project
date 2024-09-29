@@ -12,7 +12,7 @@ export const ContainerWrapper = styled.div`
   /* background-color: red; */
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
 
   @media (max-width: 1090px) {
     flex-direction: column;
@@ -21,23 +21,29 @@ export const ContainerWrapper = styled.div`
   }
 `;
 
-
 export const Section1 = styled.section`
   background-image: url(${(props) => (props.image ? props.image : Frame)});
-  background-repeat:no-repeat;
-  background-size:cover;
-  width:100%;
-  height:400px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 400px;
   background-color: red;
 `;
 
 export const Wrapper = styled.div`
   width: ${({ width }) => (width ? width : "100%")};
   /* height: auto; */
-  align-items: center;
+
   background-color: ${({ background }) =>
     background ? background : "transparent"};
   display: flex;
+
+  @media (max-width: 1090px) {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
   flex-direction: column;
   padding: ${({ padding }) => (padding ? padding : "0")};
   /* align-items: center; */
@@ -93,7 +99,7 @@ export const SquareBoxSection = styled.div`
   @media (max-width: 1130px) {
     /* flex-direction:column */
   }
-  @media (max-width: 840px) {
+  @media (max-width: 767px) {
     flex-direction: column;
   }
 `;
@@ -102,7 +108,7 @@ export const SquareBox = styled.div`
   width: 30%;
   padding: 20px;
   background-color: white;
-  height: 300px;
+  height: 330px;
   border-radius: 10px;
   margin-top: 30px;
 
@@ -114,7 +120,9 @@ export const SquareBox = styled.div`
     width: 45%;
   }
   @media (max-width: 750px) {
-    width: 100%;
+    width: 77%;
+    padding: 10px;
+    height: 50%;
   }
 `;
 

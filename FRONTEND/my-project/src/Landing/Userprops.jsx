@@ -14,13 +14,13 @@ function Props({ text, name, image, job }) {
           >
             {text}
           </p>
-          <div className="flex  w-[37%] sm:w-[35%] md:w-[62%] lg:w-[68%] justify-between items-center">
+          <div className="flex  w-[70%] sm:w-[35%] md:w-[62%] lg:w-[68%] justify-between items-center">
             <img
               src={image}
               alt=""
               className="sm:w-[45.04px] sm:h-[45.04px] w-[44px] h-[44px]"
             />
-            <div className="lg:text-lg md:text-sm text-sm">
+            <div className="lg:text-lg md:text-sm text-sm w-[70%] py-1">
               <p className="text-[#5DD9A0]">{name}</p>
               <p>{job}</p>
             </div>

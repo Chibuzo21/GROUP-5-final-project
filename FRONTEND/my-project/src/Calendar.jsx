@@ -9,11 +9,13 @@ const MyBookingComponent = () => {
 
   return (
     <div>
-      <p className="font-medium text-base sm:text-lg md:text-xl">Select Date</p>
+      <p className="font-medium text-base sm:text-lg md:text-xl mb-4">
+        Select Date
+      </p>
       <Calendar
         onChange={setDate}
         value={date}
-        className="rounded-lg shadow-md border-[#BCE6CE] border-2 h-[55vh] p-2 "
+        className="rounded-lg shadow-md border-[#BCE6CE] border-2 h-4/4 p-2 "
       />
     </div>
   );

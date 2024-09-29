@@ -55,7 +55,7 @@ placeholder:text-[#657964] md:text-base text-sm w-full md:w-[70vw] py-2 md:py-3"
           />
         </div>
       </section>
-      <section className="w-full md:w-[80%]   mb-6 border-black border-2">
+      <section className="w-full md:w-[80%]   mb-6">
         <p className="md:text-2xl  text-lg mb-2 font-medium">Active Now</p>
         <div className="flex flex-wrap justify-center gap-4 w-3/4 px-2 lg:w-full">
           <div

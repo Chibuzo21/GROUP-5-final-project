@@ -1,11 +1,6 @@
 import React from "react";
 import Logo from "../assets/logo.png";
-import {
-  FaFacebookF,
-  FaInstagram,
-  FaLinkedinIn,
-  FaTwitter,
-} from "react-icons/fa";
+
 import { SiAdobe } from "react-icons/si";
 import { MdCopyright } from "react-icons/md";
 import { IoMdArrowDropdown } from "react-icons/io";
@@ -14,23 +9,25 @@ function Footer() {
   return (
     <>
       <main
-        className=" w-full sm:h-[462px] h-[60vh]
-    bg-gradient-to-b from-[#76B282] to-[#206E30] flex flex-col justify-center px-7 sm:px-14 "
+        className=" w-full sm:py-7 py-2
+    bg-gradient-to-b from-[#76B282] to-[#206E30] flex flex-col justify-center px-2 "
       >
         <section
-          className=" flex text-white w-[1240px] text-sm 
-        h-[341px] sm:text-[16px] font-normal"
+          className=" md:flex justify-center align-center  text-white w-[100%] text-sm  py-2 px-2
+        sm:text-[13px] text-[9px] font-normal mb-6 "
         >
-          <div className="flex flex-col sm:gap-5 gap-1 sm:w-[27vw] w-[18vw]">
-            <img src={Logo} alt="" className="w-[224px] h-[53px]" />
+          <div className="flex md:flex-col md:w-[30%]  w-[100%] gap-2 align-center  ">
+            <img src={Logo} alt="" className="sm:w-[224px] w-[35%]  mb-2" />
             <p>About us</p>
             <p>Our team</p>
             <p>Careers</p>
             <p>Press</p>
           </div>
-          <section className="flex sm:flex-row sm:gap-14 gap-4 sm:w-[848px] w-[18vw] ">
-            <div className="flex flex-col sm:gap-5 gap-2">
-              <p className="h-[7vh] font-medium text-[20px]">Search By</p>
+          <section className="flex sm:flex-row flex-col gap-2  lg:w-[60%] w-[100%] align-center justify-between ">
+            <div className="flex md:flex-col gap-2 ">
+              <p className=" sm:font-medium  sm:text-[15px] text-[12px] sm:mb-3">
+                Search By
+              </p>
               <p>Specialty</p>
               <p>City</p>
               <p>Insurance</p>
@@ -38,78 +35,39 @@ function Footer() {
               <p>Center</p>
             </div>
 
-            <div className="flex flex-col gap-5">
-              <p className="h-[7vh] font-medium text-[20px]">
+            <div className="flex sm:flex-col ">
+              <p className="sm:font-medium font-normal sm:text-[15px] text-[12px] sm:mb-3 mr-5 sm:mr-0 ">
                 Are you A Doctor?{" "}
               </p>
               <p>Join CareKonect</p>
             </div>
 
-            <div className="flex flex-col gap-5">
-              <p className="h-[7vh] font-medium text-[20px]">Need Help?</p>
+            <div className="flex md:flex-col gap-2  ">
+              <p className=" sm:font-medium sm:text-[15px] text-[12px] mb-3">
+                Need Help?
+              </p>
               <p>Medical library</p>
               <p>Contact us</p>
               <p>Terms of use</p>
               <p>Privacy policy</p>
               <p>Doctor's privacy policy</p>
             </div>
-
-            <div className="flex flex-col gap-5">
-              <p className="h-[7vh] font-medium text-[20px]">Social</p>
-              <div className="flex flex-row gap-1">
-                <div
-                  className="text-[#206E30] bg-[#BEBEBE] h-[3.4vh] w-[1.7vw]
- flex items-center justify-center rounded-3xl"
-                >
-                  <FaInstagram />
-                </div>
-                <p>Instagram</p>
-              </div>
-
-              <div className="flex flex-row gap-1">
-                <div
-                  className="text-black bg-[#BEBEBE] h-[3.4vh] w-[1.7vw]
- flex items-center justify-center rounded-3xl"
-                >
-                  <FaTwitter />
-                </div>
-                <p>Twitter</p>
-              </div>
-              <div className="flex flex-row gap-1">
-                <div
-                  className="text-[#2e9743] bg-[#BEBEBE] h-[3.4vh] w-[1.7vw]
- flex items-center justify-center rounded-3xl"
-                >
-                  <FaFacebookF />
-                </div>
-                <p>Facebook</p>
-              </div>
-              <div className="flex flex-row gap-1">
-                <div
-                  className="
- flex items-center justify-center rounded-3xl"
-                >
-                  <FaLinkedinIn />
-                </div>
-                <p>LinkedIn</p>
-              </div>
-            </div>
           </section>
         </section>
 
-        <div className="border-t border-white w-[90vw] h-[6vh]"></div>
-        <section>
-          <div className="flex w-[90vw] justify-between text-sm ">
-            <div className="flex justify-between w-[27vw]">
-              <div className="text-white font-medium items-center justify-between w-[5.5vw] flex ">
-                <span className="text-xl">
+        <div className="border-t m-auto border-white w-[88vw] py-2"></div>
+        <section className=" flex justify-center align-center">
+          <div className="flex w-[92%] sm:w-[94%] sm:flex-row flex-col justify-between sm:text-[13px] lg:text-sm text-[9px] ">
+            <div className="flex  justify-between align-center sm:w-[40%] lg:w-[35%] w-[60%] mb-2 sm:mb-0 ">
+              <div className="text-white font-medium items-center justify-between lg:w-[5.5vw] flex ">
+                <span className="sm:text-xl text-[10px]">
                   {" "}
                   <SiAdobe />
                 </span>
-                <span>Adobe</span>
+                <span className="sm:text-sm text-[9px]">Adobe</span>
               </div>
               <div className="flex text-white items-center ">
-                <span className="text-xl">
+                <span className="sm:text-xl text-[10px]">
                   <MdCopyright />
                 </span>
                 <p className="text-gray-300">
@@ -117,7 +75,7 @@ function Footer() {
                 </p>
               </div>
             </div>
-            <div className="flex justify-between w-[47vw] text-white">
+            <div className="flex justify-between lg:w-[47vw] sm:w-[58%] sm:text-[13px] text-white lg:text-sm text-[9px]">
               <div className="flex items-center justify-center">
                 <span>English</span>
                 <span>

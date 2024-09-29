@@ -63,7 +63,7 @@ a.active {
   justify-content: space-between;
 }
 .myclock .react-time-picker__inputGroup__input {
-  width: 3vw;
+  width: 4vw;
   border: none;
   font-size: px;
   text-align: center;
@@ -78,9 +78,23 @@ a.active {
 .react-time-picker__inputGroup__divider {
   font-size: 24px;
 }
+@media (max-width: 1023px) {
+  .myclock .react-time-picker__inputGroup__input {
+    width: 28vw;
+    border: none;
+    font-size: 20px;
+    text-align: center;
+  }
+}
 @media (max-width: 768px) {
   .payment-confirmation {
     padding: 1px;
+  }
+  .myclock .react-time-picker__inputGroup__input {
+    width: 12vw;
+    border: none;
+    font-size: 17px;
+    text-align: center;
   }
   .start-video-call {
     font-size: 0.8px;

@@ -4,10 +4,10 @@ import Login from "./Pages/Login";
 import Signup from "./Pages/Signup";
 import Contact from "./Pages/contact/Contact";
 import Main from "./Components/Main";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useNavigate } from "react-router-dom";
 import Carekonect from "./Pages/Carekonect";
 import "./App.css";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Context } from "./Context";
 
 import Appointment from "./Pages/Appointment/Appointment";
@@ -24,12 +24,25 @@ import Nurse3 from "./Pages/Privatechats/Nurse3";
 import Nurse4 from "./Pages/Privatechats/Nurse4";
 function App() {
   const [viewNav, setViewnav] = useState(false);
-  const [name, setName] = useState();
+  const [name, setName] = useState(() => {
+    return localStorage.getItem("username" || "");
+  });
   const [nameWidth, setNamewidth] = useState("hidden");
   const [width, setWidth] = useState("lg:w-[60vw]  md:w-[60vw] md:flex hidden");
   const [Navwidth, setnavwidth] = useState(
     "w-[290px] sm:w-[189px] md:w-[190px] lg:w-[290px]"
   );
+
+  const [isLoggedin, setIsLoggedin] = useState(() => {
+    return localStorage.getItem("isLoggedin") === "true";
+  });
+  useEffect(() => {
+    if (isLoggedin) {
+      setViewnav(true);
+      setnavwidth("hidden");
+      setNamewidth("flex");
+    }
+  }, [isLoggedin]);
 
   return (
     <>
@@ -42,6 +55,8 @@ function App() {
             setName,
             width,
             setWidth,
+            isLoggedin,
+            setIsLoggedin,
 
             Navwidth,
             setnavwidth,
@@ -57,13 +72,18 @@ function App() {
               <Route path="/Contact" element={<Contact />} />
               <Route path="/x" element={<Appointment />} />
               <Route path="/Payment" element={<Payment />} />
-              <Route
-                path="/Login"
-                element={<Login viewNav={viewNav} setViewnav={setViewnav} />}
-              />
-              <Route path="/Signup" element={<Signup />} />
             </Route>
-
+            <Route
+              path="/Login"
+              element={
+                <Login
+                  setName={[isLoggedin, setIsLoggedin]}
+                  viewNav={viewNav}
+                  setViewnav={setViewnav}
+                />
+              }
+            />
+            <Route path="/Signup" element={<Signup />} />
             <Route path="/Chat" element={<Chat />} />
             <Route path="/Jane" element={<Jane />} />
             <Route path="/John" element={<John />} />
