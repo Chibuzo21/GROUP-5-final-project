@@ -10,32 +10,34 @@ function Header({ toggle }) {
   const { viewNav, name, nameWidth, logo, Navwidth } = useContext(Context);
 
   const [togglemenu, settogglemenu] = useState(
-    "hidden w-0 md:flex md:w-[70vw] lg:w-[]"
+    "hidden w-0 md:flex md:w-[70vw]"
   );
+
   useEffect(() => {
     const handlescrollHeader = () => {
       const scroll = window.scrollY;
 
-      setStickyheader(scroll > 100 ? "fixed" : "md:static fixed");
+      setStickyheader(scroll > 100 ? "fixed" : "md:static sticky");
     };
     window.addEventListener("scroll", handlescrollHeader);
     //cleanup function
     return () => window.removeEventListener("scroll", handlescrollHeader);
   }, []);
   const handleclick = () => {
-    togglemenu === "hidden w-0 "
-      ? settogglemenu(
-          "h-screen overflow-y-hidden overflow-x-hidden flex w-screen fixed"
-        )
-      : settogglemenu("hidden w-0 ");
-    setStickyheader("fixed");
+    if (togglemenu === "hidden w-0 md:flex md:w-[70vw]") {
+      settogglemenu(
+        "h-screen overflow-y-hidden overflow-x-hidden flex w-screen fixed"
+      );
+    } else {
+      settogglemenu("hidden w-0 md:flex md:w-[70vw]");
+    }
   };
   const close = () => {
     if (
       togglemenu ===
       "h-screen overflow-y-hidden overflow-x-hidden flex w-screen fixed"
     ) {
-      settogglemenu("hidden w-0");
+      settogglemenu("hidden w-0 md:flex md:w-[70vw]");
     }
   };
 
@@ -60,7 +62,7 @@ function Header({ toggle }) {
            top-[10%] md:bg-white 
              bg-black/100 ${togglemenu} md:z-0 z-50  justify-start items-center
              md:items-center md:justify-between    md:text-sm sm:text-xl
-              xl:text-[20px] lg:text-lg
+              xl:text-[20px] lg:text-lg text-[14px]
               md:gap-0 gap-8 
         font-medium md:text-[#979B98] text-white overflow-x-hidden md:h-[54px] `}
         >

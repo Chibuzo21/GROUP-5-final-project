@@ -35,8 +35,8 @@ function Books({ error, setError }) {
   return (
     <>
       <main
-        className="py-8 md:py-12 h-screen relative bg-cover bg-center w-screen grid 
-        content-center justify-items-center"
+        className="py-8 md:py-12 h-screen relative bg-cover bg-center  grid 
+        content-center justify-items-center max-w-[100%]"
         style={{
           backgroundImage: `linear-gradient(to top, rgba(0, 0, 0, 0.8) 0, 
     rgba(0, 0, 0, 0.9) 60%, rgba(0, 0, 0, 0.9) 100%),url(${Book})`,
@@ -60,7 +60,7 @@ function Books({ error, setError }) {
             conveniently
           </p>
           <button
-            className="text-white py-4 md:px-4 px-8 md:text-lg md:min-w-[20vw]
+            className="text-white py-2 md:px-4 px-4 md:text-lg md:min-w-[20vw] maxw-[90%]
                font-bold lg:text-xl text-lg bg-[#16A362] disabled:opacity-50 rounded-md"
             disabled={btnText}
             onClick={handleclick}

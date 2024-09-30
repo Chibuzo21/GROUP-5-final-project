@@ -92,7 +92,7 @@ function Nurse() {
             </div>
           </div>
           <div className="mt-8 md:mt-0">
-            <img src={girl} className="w-3/4 h-auto mx-auto " />
+            <img src={girl} className="w-full h-auto mx-auto " />
           </div>
         </div>
       </main>

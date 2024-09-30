@@ -120,15 +120,15 @@ function Signup() {
   return (
     <>
       <Header />
-      <main className="flex items-center justify-evenly lg:h-[120vh] md:h-[70vh]  py-3 lg:py-4">
-        <section className=" md:flex  md:w-[43%]   xl:w-[42%] hidden h-3/4 lg:h-5/6 lg:py-2">
+      <main className="flex items-center justify-evenly lg:h-[120vh] md:h-[70vh] h-[100vh]   lg:py-4">
+        <section className=" md:flex  md:w-[43%]   xl:w-[42%] hidden h-0 md:h-3/4 lg:h-5/6 lg:py-2">
           <img
             className="rounded-md w-full  lg:h-[78vh] md:h-[60vh] "
             src={carekonect}
             alt="image"
           />
         </section>
-        <section className="  md:w-[50%] w-[85%]  flex flex-col h-3/4 md:py-3 lg:py-0 lg:h-full">
+        <section className="  md:w-[50%] w-[85%]  flex flex-col  md:h-3/4 md:py-3 lg:py-0 lg:h-full">
           <div className="">
             <p className=" font-semibold text-2xl md:text-4xl lg:text-[38px] text-center">
               SIGNUP
@@ -222,7 +222,7 @@ function Signup() {
               </div>
               <div className="flex space-x-2  items-center lg:py-3">
                 <button
-                  className="border-[1px] border-[#206E30] rounded-sm h-[2.8vh] w-[1.4vw] md:w-[4vw] lg:w-[1.4vw]"
+                  className="border-[1px] border-[#206E30] rounded-sm h-[2.8vh] w-[6vw] md:w-[4vw] lg:w-[1.4vw]"
                   onClick={icon}
                 >
                   <span

@@ -11,7 +11,7 @@ function About() {
       <main className="w-[100%] h-full ">
         <div
           className="h-screen
-           relative bg-cover bg-center w-screen grid content-center 
+           relative bg-cover bg-center max-w-[100%] grid content-center 
            justify-items-start text-white sm:text-6xl text-4xl font-bold"
           style={{
             backgroundImage: `linear-gradient(to top, rgba(0, 0, 0, 0.4) 0, 
@@ -24,7 +24,7 @@ function About() {
           className="flex md:flex-row py-12 flex-col w-[90%]  mx-auto
          items-center justify-center"
         >
-          <div className=" w-[48%] mb-2  ">
+          <div className=" w-full mb-2  ">
             <img src={girl} className="md:w-[90%] w-[100%] h-auto  " />
           </div>
           <div

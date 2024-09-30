@@ -15,28 +15,12 @@ function Mission() {
        sm:flex-row md:gap-5 sm:gap-1  px-6 md:w-2/4 lg:w-2/4  "
       >
         <div className="flex flex-col md:gap-5  gap-5  ">
-          <img
-            src={Hands}
-            alt=""
-            className="w-3/4 md:w-full lg:w-[253px] h-auto mx-auto "
-          />
-          <img
-            src={Doctors}
-            alt=""
-            className="w-3/4 md:w-full lg:w-[253px] h-auto mx-auto"
-          />
+          <img src={Hands} alt="" className="w-full  h-auto mx-auto " />
+          <img src={Doctors} alt="" className="w-full  h-auto mx-auto" />
         </div>
         <div className="flex flex-col gap-6 pt-12">
-          <img
-            src={Doc}
-            alt=""
-            className="w-3/4 md:w-full lg:w-[253px] h-auto mx-auto"
-          />
-          <img
-            src={Four}
-            alt=""
-            className="w-3/4 md:w-full lg:w-[253px] h-auto mx-auto"
-          />
+          <img src={Doc} alt="" className="w-full  h-auto mx-auto" />
+          <img src={Four} alt="" className="w-full h-auto mx-auto" />
         </div>
       </section>
       <section
@@ -69,12 +53,6 @@ function Mission() {
           individuals to take control of their health with ease and confidence,
           fostering a healthier and more connected community.
         </p>
-        <button
-          className=" rounded-md bg-[#206E30] text-xl lg:text-xl font-medium
-           text-white  md:text-base py-3 px-16 mb-4 "
-        >
-          Learn More
-        </button>
       </section>
     </main>
   );

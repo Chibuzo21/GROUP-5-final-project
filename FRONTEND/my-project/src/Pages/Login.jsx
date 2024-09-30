@@ -86,7 +86,7 @@ function Login({}) {
       <Header />
       <main
         className="flex md:flex-row flex-col w-screen items-center justify-center 
-        py-4  lg:h-full md:h-[70vh]
+        py-4  lg:h-full md:h-[70vh] h-[80vh]
    "
       >
         <div className="  md:flex  md:w-[43%] h-3/4 lg:h-5/6 lg:py-2  xl:w-[42%] hidden">
@@ -94,7 +94,7 @@ function Login({}) {
         </div>
 
         <section
-          className=" md:w-[46%] w-[85%] flex flex-col justify-center items-center 
+          className=" md:w-[46%] w-[95%] flex flex-col justify-center items-center 
           "
         >
           <p className="text-center text-2xl md:text-[30px] lg:text-[38px] font-semibold mb-4">

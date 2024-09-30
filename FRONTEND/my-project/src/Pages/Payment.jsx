@@ -64,7 +64,7 @@ function Payment() {
             <img
               src={Old}
               alt="Consultation"
-              className="w-3/4 md:w-full h-auto mx-auto"
+              className="w-full h-auto mx-auto"
             />
           </div>
         </section>
