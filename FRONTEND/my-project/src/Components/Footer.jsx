@@ -13,18 +13,18 @@ function Footer() {
     bg-gradient-to-b from-[#76B282] to-[#206E30] flex flex-col justify-center px-2 "
       >
         <section
-          className=" md:flex justify-center align-center  text-white w-[100%] text-sm  py-2 px-2
+          className=" md:flex justify-center align-center  text-white w-[100%]  py-2 px-2
         sm:text-[13px] text-[8px] sm:mb-6 mb-3 "
         >
-          <div className="flex md:flex-col md:w-[30%]  w-[100%] gap-2 align-center  ">
-            <img src={Logo} alt="" className="sm:w-[224px] w-[35%]  " />
+          <div className="flex md:flex-col md:w-[30%]  w-[100%] gap-2 mb-2 sm:mb-0  items-center sm:items-start ">
+            <img src={Logo} alt="" className="sm:w-[224px] w-[30vw]  " />
             <p>About us</p>
             <p>Our team</p>
             <p>Careers</p>
             <p>Press</p>
           </div>
-          <section className="flex sm:flex-row flex-col sm:gap-2  lg:w-[60%] w-[100%] align-center justify-between ">
-            <div className="flex md:flex-col gap-2 ">
+          <section className="flex sm:flex-row flex-col sm:gap-2 gap-3 lg:w-[60%] w-[100%] align-center justify-between ">
+            <div className="sm:flex hidden md:flex-col gap-2 ">
               <p className=" sm:font-medium  sm:text-[15px] text-[10px] sm:mb-3">
                 Search By
               </p>
