@@ -4,6 +4,8 @@ import Fboy from "/fboy.jpg";
 import Fgirl from "/fgirl.jpg";
 import Fman from "../assets/fman.jpg";
 
+
+
 function OurTeam() {
   return (
     <main
@@ -37,8 +39,14 @@ function OurTeam() {
         />
         <Props
           name="Name: Hart Rejoice"
-          position="Position: COO"
+          position="Position: CEO"
           bio="Bio: Rejoice overseas operations to ensure smooth functioning"
+          profile={Fgirl}
+        />
+        <Props
+          name="Name: NWANKWO IFEANYI OGBONNAYA"
+          position="Position: CEO"
+          bio="Bio: IFEANYI overseas the documentation of this site"
           profile={Fman}
         />
       </section>
