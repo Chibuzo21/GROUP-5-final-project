@@ -1,0 +1,19 @@
+a.active{
+color: rgb(68, 148, 68);
+
+font-weight:500;
+}
+.chief::after{
+    
+    content: "";
+    position: absolute;
+    bottom: -40px;
+    z-index: 1;
+    transform: translateX(-50%);
+    left:18%;
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 45px solid white;
+    }
