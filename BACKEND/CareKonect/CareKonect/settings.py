@@ -14,8 +14,8 @@ from pathlib import Path
 # django_heroku.settings(locals())
 import os
 from pathlib import Path
-import environ
-env = environ.Env()
+# import environ
+# env = environ.Env()
 # import django_heroku
 # import dj_database_url
 # environ.Env.read_env()
@@ -37,6 +37,7 @@ SECRET_KEY = 'django-insecure-m!f5=cq&nfr1lhl04e%tn^ypmx)jycd#_*%)12%le%^&vxnnng
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
+# ALLOWED_HOSTS = [ '127.0.0.1','carekonect.vercel.app', 'localhost',]
 
 
 # Application definition
@@ -51,9 +52,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'Hospital',
     'User',
+    'appointments',
     # 'django-environ',
     'rest_framework',
     'rest_framework_simplejwt',
+     'rest_framework.authtoken',
 ]
 
 MIDDLEWARE = [
@@ -106,12 +109,14 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',  # or 'mysql', 'sqlite3', etc.
         'NAME': 'CareKonectData',  # database name
         'USER': 'postgres',  # database username
-        'PASSWORD': 'HASHNODE',  # database password
+        'PASSWORD': 'postgres',  # database password
+        # 'PASSWORD': 'HASHNODE',  # database password
         'HOST': 'localhost',  # database host
+        # 'PORT': '8000',  # database port
         'PORT': '5432',  # database port
     }
 }
-environ.Env.read_env()
+# environ.Env.read_env()
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
