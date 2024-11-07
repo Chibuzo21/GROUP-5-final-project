@@ -42,15 +42,15 @@ function Login() {
     }
   };
 
-  const handleclick = (event) => {
-    event.preventDefault();
+  const handleclick = (log) => {
+    log.preventDefault();
 
     // Validate user inputs
     const isUsernameValid = ValidateUsername(username);
     const isPasswordValid = Validatepassword(password);
 
-    setError(!isUsernameValid);           // Display error if username is invalid
-    setPassworderror(!isPasswordValid);    // Display error if password is invalid
+    setError(console.log(!isPasswordValid));          // Display error if username is invalid
+    setPassworderror(console.log(!isPasswordValid));    // Display error if password is invalid
 
     // If both username and password are valid, proceed with login
     if (isUsernameValid && isPasswordValid) {
