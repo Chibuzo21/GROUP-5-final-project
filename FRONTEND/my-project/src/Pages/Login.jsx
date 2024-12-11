@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 import { Context } from "../Context";
 import Header from "../Components/Header";
 import { IoEyeOffOutline, IoEyeOutline } from "react-icons/io5";
+import axios from 'axios';
 
 function Login() {
   const [showMark, setshowMark] = useState(false);
@@ -43,49 +44,47 @@ function Login() {
       setPasswordicon(<IoEyeOutline />);
     }
   };
-  const handleclick = async (event) => {
+  const handleclick = (event) => {
     event.preventDefault();
   
+    // Validate user inputs
     const isUsernameValid = ValidateUsername(username);
     const isPasswordValid = Validatepassword(password);
   
-    if (!isUsernameValid || !isPasswordValid) {
-      setError(!isUsernameValid);
-      setPassworderror(!isPasswordValid);
-      return;
-    }
+    setError(!isUsernameValid); // Display error if username is invalid
+    setPassworderror(!isPasswordValid); // Display error if password is invalid
   
-    try {
-      const response = await fetch("/api/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ username, password }),
-      });
-  
-      const data = await response.json();
-  
-      if (response.ok && data.success) {
-        setViewnav(true);
-        setName(username);
-        setnavwidth("hidden");
-        setNamewidth("flex");
-        localStorage.setItem("username", username);
-        localStorage.setItem("isLoggedin", "true");
-        setIsLoggedin(true);
-        navigate("/");
-      } else {
-        setError(true);
-        setPassworderror(true);
-        setIsLoggedin(false);
-      }
-    } catch (error) {
-      console.error("Login error:", error);
-      setError(true);
-      setPassworderror(true);
+    if (isUsernameValid && isPasswordValid) {
+      // Send a request to the Django backend
+      axios.post('http://127.0.0.1:8000/User/login/', { 
+          username, 
+          password 
+        })
+        .then(response => {
+          console.log(response.data);
+          // Handle successful login response
+          setViewnav(true);
+          setName(username);
+          setnavwidth("hidden");
+          setNamewidth("flex");
+          localStorage.setItem("username", username);
+          localStorage.setItem("isLoggedin", "true");
+          setIsLoggedin(true);
+          setTimeout(() => navigate("/"), 600);
+        })
+        .catch(error => {
+          console.error(error.response.data);
+          // Handle login failure
+          setError(true);
+          setPassworderror(true);
+        });
+    } else {
+      setViewnav(false);
+      setName(null);
+      setIsLoggedin(false);
     }
   };
   
-
   // const handleclick = (event) => {
   //   event.preventDefault();
 
@@ -116,6 +115,7 @@ function Login() {
   //     setIsLoggedin(false);
   //   }
   // };
+  
 
   const handleinput = (event) => {
     setusername(event.target.value);
