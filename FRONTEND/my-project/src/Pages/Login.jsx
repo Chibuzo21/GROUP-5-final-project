@@ -44,77 +44,77 @@ function Login() {
       setPasswordicon(<IoEyeOutline />);
     }
   };
-  const handleclick = (event) => {
-    event.preventDefault();
-  
-    // Validate user inputs
-    const isUsernameValid = ValidateUsername(username);
-    const isPasswordValid = Validatepassword(password);
-  
-    setError(!isUsernameValid); // Display error if username is invalid
-    setPassworderror(!isPasswordValid); // Display error if password is invalid
-  
-    if (isUsernameValid && isPasswordValid) {
-      // Send a request to the Django backend
-      axios.post('http://127.0.0.1:8000/User/login/', { 
-          username, 
-          password 
-        })
-        .then(response => {
-          console.log(response.data);
-          // Handle successful login response
-          setViewnav(true);
-          setName(username);
-          setnavwidth("hidden");
-          setNamewidth("flex");
-          localStorage.setItem("username", username);
-          localStorage.setItem("isLoggedin", "true");
-          setIsLoggedin(true);
-          setTimeout(() => navigate("/"), 600);
-        })
-        .catch(error => {
-          console.error(error.response.data);
-          // Handle login failure
-          setError(true);
-          setPassworderror(true);
-        });
-    } else {
-      setViewnav(false);
-      setName(null);
-      setIsLoggedin(false);
-    }
-  };
-  
   // const handleclick = (event) => {
   //   event.preventDefault();
-
+  
   //   // Validate user inputs
   //   const isUsernameValid = ValidateUsername(username);
   //   const isPasswordValid = Validatepassword(password);
-
-  //   setError(!isPasswordValid);          // Display error if username is invalid
-  //   setPassworderror(!isPasswordValid);    // Display error if password is invalid
-
-    
-  //   // If both username and password are valid, proceed with login
+  
+  //   setError(!isUsernameValid); // Display error if username is invalid
+  //   setPassworderror(!isPasswordValid); // Display error if password is invalid
+  
   //   if (isUsernameValid && isPasswordValid) {
-  //     setViewnav(true);
-  //     setName(username);
-  //     setnavwidth("hidden");
-  //     setNamewidth("flex");
-  //     localStorage.setItem("username", username);
-  //     localStorage.setItem("isLoggedin", "true");
-  //     setIsLoggedin(true);
-
-  //     // Redirect user to home page after successful login
-  //     setTimeout(() => navigate("/"), 600);
+  //     // Send a request to the Django backend
+  //     axios.post('http://127.0.0.1:8000/User/login/', { 
+  //         username, 
+  //         password 
+  //       })
+  //       .then(response => {
+  //         console.log(response.data);
+  //         // Handle successful login response
+  //         setViewnav(true);
+  //         setName(username);
+  //         setnavwidth("hidden");
+  //         setNamewidth("flex");
+  //         localStorage.setItem("username", username);
+  //         localStorage.setItem("isLoggedin", "true");
+  //         setIsLoggedin(true);
+  //         setTimeout(() => navigate("/"), 600);
+  //       })
+  //       .catch(error => {
+  //         console.error(error.response.data);
+  //         // Handle login failure
+  //         setError(true);
+  //         setPassworderror(true);
+  //       });
   //   } else {
-  //     // If inputs are invalid, reset the navigation settings and username
   //     setViewnav(false);
   //     setName(null);
   //     setIsLoggedin(false);
   //   }
   // };
+  
+  const handleclick = (event) => {
+    event.preventDefault();
+
+    // Validate user inputs
+    const isUsernameValid = ValidateUsername(username);
+    const isPasswordValid = Validatepassword(password);
+
+    setError(!isPasswordValid);          // Display error if username is invalid
+    setPassworderror(!isPasswordValid);    // Display error if password is invalid
+
+    
+    // If both username and password are valid, proceed with login
+    if (isUsernameValid && isPasswordValid) {
+      setViewnav(true);
+      setName(username);
+      setnavwidth("hidden");
+      setNamewidth("flex");
+      localStorage.setItem("username", username);
+      localStorage.setItem("isLoggedin", "true");
+      setIsLoggedin(true);
+
+      // Redirect user to home page after successful login
+      setTimeout(() => navigate("/"), 600);
+    } else {
+      // If inputs are invalid, reset the navigation settings and username
+      setViewnav(false);
+      setName(null);
+      setIsLoggedin(false);
+    }
+  };
   
 
   const handleinput = (event) => {
