@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable react/no-unescaped-entities */
 import React, { useContext, useState } from "react";
 import Medical from "../assets/Medical.png";
 import { FcGoogle } from "react-icons/fc";
@@ -41,36 +43,79 @@ function Login() {
       setPasswordicon(<IoEyeOutline />);
     }
   };
-
-  const handleclick = (log) => {
-    log.preventDefault();
-
-    // Validate user inputs
+  const handleclick = async (event) => {
+    event.preventDefault();
+  
     const isUsernameValid = ValidateUsername(username);
     const isPasswordValid = Validatepassword(password);
-
-    setError(console.log(!isPasswordValid));          // Display error if username is invalid
-    setPassworderror(console.log(!isPasswordValid));    // Display error if password is invalid
-
-    // If both username and password are valid, proceed with login
-    if (isUsernameValid && isPasswordValid) {
-      setViewnav(true);
-      setName(username);
-      setnavwidth("hidden");
-      setNamewidth("flex");
-      localStorage.setItem("username", username);
-      localStorage.setItem("isLoggedin", "true");
-      setIsLoggedin(true);
-
-      // Redirect user to home page after successful login
-      setTimeout(() => navigate("/"), 600);
-    } else {
-      // If inputs are invalid, reset the navigation settings and username
-      setViewnav(false);
-      setName(null);
-      setIsLoggedin(false);
+  
+    if (!isUsernameValid || !isPasswordValid) {
+      setError(!isUsernameValid);
+      setPassworderror(!isPasswordValid);
+      return;
+    }
+  
+    try {
+      const response = await fetch("/api/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ username, password }),
+      });
+  
+      const data = await response.json();
+  
+      if (response.ok && data.success) {
+        setViewnav(true);
+        setName(username);
+        setnavwidth("hidden");
+        setNamewidth("flex");
+        localStorage.setItem("username", username);
+        localStorage.setItem("isLoggedin", "true");
+        setIsLoggedin(true);
+        navigate("/");
+      } else {
+        setError(true);
+        setPassworderror(true);
+        setIsLoggedin(false);
+      }
+    } catch (error) {
+      console.error("Login error:", error);
+      setError(true);
+      setPassworderror(true);
     }
   };
+  
+
+  // const handleclick = (event) => {
+  //   event.preventDefault();
+
+  //   // Validate user inputs
+  //   const isUsernameValid = ValidateUsername(username);
+  //   const isPasswordValid = Validatepassword(password);
+
+  //   setError(!isPasswordValid);          // Display error if username is invalid
+  //   setPassworderror(!isPasswordValid);    // Display error if password is invalid
+
+    
+  //   // If both username and password are valid, proceed with login
+  //   if (isUsernameValid && isPasswordValid) {
+  //     setViewnav(true);
+  //     setName(username);
+  //     setnavwidth("hidden");
+  //     setNamewidth("flex");
+  //     localStorage.setItem("username", username);
+  //     localStorage.setItem("isLoggedin", "true");
+  //     setIsLoggedin(true);
+
+  //     // Redirect user to home page after successful login
+  //     setTimeout(() => navigate("/"), 600);
+  //   } else {
+  //     // If inputs are invalid, reset the navigation settings and username
+  //     setViewnav(false);
+  //     setName(null);
+  //     setIsLoggedin(false);
+  //   }
+  // };
 
   const handleinput = (event) => {
     setusername(event.target.value);
@@ -107,6 +152,7 @@ function Login() {
           </p>
           <div className="flex flex-col static px-10 w-full">
             <div>
+              
               <p className="font-medium md:text-[19px] lg:text-[20px] sm:text-2xl text-xl">
                 Email or Username
               </p>
