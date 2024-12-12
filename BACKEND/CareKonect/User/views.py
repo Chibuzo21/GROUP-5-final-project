@@ -14,6 +14,9 @@ from django.contrib import messages
 # from django.http import JsonResponse
 # from django.views.decorators.csrf import csrf_exempt
 # import json
+from django.http import JsonResponse
+from rest_framework.decorators import api_view
+import jwt
 
 
 
@@ -26,11 +29,26 @@ class SignupView(generics.CreateAPIView):
     serializer_class = UserSerializer
     
     
+    
+    
 
 class LoginView(APIView):
     permission_classes = [AllowAny]
     serializer_class = LoginSerializer
     queryset = User.objects.all()
+    @api_view(['POST'])
+    def login_view(request):
+       username = request.data.get('username')
+       password = request.data.get('password')
+
+       user = authenticate(request, username=username, password=password)
+       if user is not None:
+        # Generate JWT token
+           token = jwt.encode({'username': user.username}, 'your_secret_key', algorithm='HS256')
+           return JsonResponse({'success': True, 'token': token})
+       else:
+           return JsonResponse({'success': False, 'message': 'Invalid credentials'}, status=401)
+
     
 
     def post(self, request, *args, **kwargs):
@@ -66,3 +84,5 @@ class LoginView(APIView):
 #         except Exception as e:
 #             return JsonResponse({"error": str(e)}, status=500)
 #     return JsonResponse({"error": "Invalid request method"}, status=405)
+
+

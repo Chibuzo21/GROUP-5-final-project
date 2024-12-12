@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 import { Context } from "../Context";
 import Header from "../Components/Header";
 import { IoEyeOffOutline, IoEyeOutline } from "react-icons/io5";
-// import axios from 'axios';
+import axios from 'axios';
 
 function Login() {
   const [showMark, setshowMark] = useState(false);
@@ -44,70 +44,52 @@ function Login() {
       setPasswordicon(<IoEyeOutline />);
     }
   };
-  // const handleclick = (event) => {
-  //   event.preventDefault();
   
-  //   // Validate user inputs
-  //   const isUsernameValid = ValidateUsername(username);
-  //   const isPasswordValid = Validatepassword(password);
-  
-  //   setError(!isUsernameValid); // Display error if username is invalid
-  //   setPassworderror(!isPasswordValid); // Display error if password is invalid
-  
-  //   if (isUsernameValid && isPasswordValid) {
-  //     // Send a request to the Django backend
-  //     axios.post('http://127.0.0.1:8000/User/login/', { 
-  //         username, 
-  //         password 
-  //       })
-  //       .then(response => {
-  //         console.log(response.data);
-  //         // Handle successful login response
-  //         setViewnav(true);
-  //         setName(username);
-  //         setnavwidth("hidden");
-  //         setNamewidth("flex");
-  //         localStorage.setItem("username", username);
-  //         localStorage.setItem("isLoggedin", "true");
-  //         setIsLoggedin(true);
-  //         setTimeout(() => navigate("/"), 600);
-  //       })
-  //       .catch(error => {
-  //         console.error(error.response.data);
-  //         // Handle login failure
-  //         setError(true);
-  //         setPassworderror(true);
-  //       });
-  //   } else {
-  //     setViewnav(false);
-  //     setName(null);
-  //     setIsLoggedin(false);
-  //   }
-  // };
-  
-  const handleclick = (event) => {
+  const handleclick = async (event) => {
     event.preventDefault();
-
+  
     // Validate user inputs
     const isUsernameValid = ValidateUsername(username);
     const isPasswordValid = Validatepassword(password);
-
-    setError(!isPasswordValid);          // Display error if username is invalid
-    setPassworderror(!isPasswordValid);    // Display error if password is invalid
-
-    
-    // If both username and password are valid, proceed with login
+  
+    setError(!isUsernameValid); // Display error if username is invalid
+    setPassworderror(!isPasswordValid); // Display error if password is invalid
+  
     if (isUsernameValid && isPasswordValid) {
-      setViewnav(true);
-      setName(username);
-      setnavwidth("hidden");
-      setNamewidth("flex");
-      localStorage.setItem("username", username);
-      localStorage.setItem("isLoggedin", "true");
-      setIsLoggedin(true);
-
-      // Redirect user to home page after successful login
-      setTimeout(() => navigate("/"), 600);
+      try {
+        // Make an API call to the backend for login
+        const response = await axios.post("http://BACKEND/CareKonect/User/", {
+          username: username,
+          password: password,
+        });
+  
+        // Check if login was successful
+        if (response.data.success) {
+          setViewnav(true);
+          setName(username);
+          setnavwidth("hidden");
+          setNamewidth("flex");
+          localStorage.setItem("username", username);
+          localStorage.setItem("isLoggedin", "true");
+          setIsLoggedin(true);
+  
+          // Redirect user to the home page after successful login
+          setTimeout(() => navigate("/"), 600);
+        } else {
+          // Handle invalid credentials
+          alert("Invalid credentials, please try again.");
+          setViewnav(false);
+          setName(null);
+          setIsLoggedin(false);
+        }
+      } catch (error) {
+        // Handle API errors
+        console.error("Login error:", error);
+        alert("An error occurred during login. Please try again later.");
+        setViewnav(false);
+        setName(null);
+        setIsLoggedin(false);
+      }
     } else {
       // If inputs are invalid, reset the navigation settings and username
       setViewnav(false);
@@ -116,6 +98,37 @@ function Login() {
     }
   };
   
+
+  // const handleclick = async (event) => {
+  //   event.preventDefault();
+
+  //   // Validate user inputs
+    
+  //   const isUsernameValid = ValidateUsername(username);
+  //   const isPasswordValid = Validatepassword(password);
+
+  //   setError(!isPasswordValid);          // Display error if username is invalid
+  //   setPassworderror(!isPasswordValid);    // Display error if password is invalid
+
+  //   // If both username and password are valid, proceed with login
+  //   if (isUsernameValid && isPasswordValid) {
+  //     setViewnav(true);
+  //     setName(username);
+  //     setnavwidth("hidden");
+  //     setNamewidth("flex");
+  //     localStorage.setItem("username", username);
+  //     localStorage.setItem("isLoggedin", "true");
+  //     setIsLoggedin(true);
+
+  //     // Redirect user to home page after successful login
+  //     setTimeout(() => navigate("/"), 600);
+  //   } else {
+  //     // If inputs are invalid, reset the navigation settings and username
+  //     setViewnav(false);
+  //     setName(null);
+  //     setIsLoggedin(false);
+  //   }
+  // };
 
   const handleinput = (event) => {
     setusername(event.target.value);
